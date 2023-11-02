@@ -1,4 +1,4 @@
-import useState from "react";
+import { useState } from "react";
 import { useMovie } from "../../../context/SiteContext";
 import styles from "./styles.module.css";
 import ArrowDown from "../../../assest/icons/ArrowDown";
