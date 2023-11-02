@@ -1,0 +1,69 @@
+@keyframes progress {
+  0% {
+    --percentage: 0;
+  }
+  100% {
+    --percentage: var(--value);
+  }
+}
+
+[property] {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+[role="progressbar2"] {
+  --percentage: var(--value); /* --value ile aynı değere ayarlandı */
+  --primary: #adf;
+  --secondary: #369;
+  --size: 50px;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+[role="progressbar2"]::before {
+  content: "";
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(
+    var(--primary) calc(var(--percentage) * 1%),
+    var(--secondary) 0
+  );
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+}
+
+[role="progressbar2"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) "%";
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 4);
+  font-weight: 800;
+  color: var(--primary);
+}
+
+@media (min-width: 300px) {
+  [role="progressbar2"] {
+    --size: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  [role="progressbar2"] {
+    --size: 40px;
+  }
+}
+
+/* div {
+  border: 1px solid red;
+} */

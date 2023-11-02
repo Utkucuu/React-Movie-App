@@ -1,0 +1,136 @@
+import { useMemo, useState } from "react";
+import { useMovie } from "../../../context/SiteContext";
+import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
+import { useHandleMovieClick } from "../../../utils/navigateDetail";
+import LoadingAnimate from "../../loadingAnimate";
+
+function TrendMovie() {
+  console.log("HOMETRENDMOVIE rendered");
+  const [toggle, setToggle] = useState(true);
+
+  const state = useMovie();
+
+  const trendDaily = state?.trendDaily?.data?.results || [];
+
+  const trendWeekly = state?.trendWeekly?.data?.results || [];
+
+  const moviesToShow = useMemo(() => {
+    return toggle ? trendDaily : trendWeekly;
+  }, [toggle, trendDaily, trendWeekly]);
+
+  const handleMovieClick = useHandleMovieClick();
+
+  if (moviesToShow.length === 0) {
+    return (
+      <LoadingAnimate
+        gradientId="myGradient56"
+        color1={"#B1E3FC"}
+        color2={"#22D1EE"}
+        colorText={"text-sky-100"}
+      />
+    );
+  }
+
+  return (
+    <section className="mx-auto mt-10 h-auto rounded-none bg-sky-100 bg-opacity-50 px-2 pb-2 shadow-2xl shadow-sky-700 duration-500 dark:bg-opacity-100 md:rounded-3xl">
+      {/* ******** ******** ******** ******** component top flex area START ******** ******** ******** ******** */}
+      <div className="flex items-center justify-between ">
+        <div className="ms-4 flex items-center justify-center py-1">
+          {/* ********** Content Title  ********** */}
+          <h2 className="whitespace-nowrap text-lg font-bold">Trend Filmler</h2>
+          {/* **************** Toggle Button - Daily / Weekly  ****************  */}
+          <button
+            className="relative ms-4 flex items-center justify-around space-x-2 rounded-full  px-1 py-1"
+            onClick={() => setToggle(!toggle)}
+          >
+            <span className="text-sm font-semibold">Bugün</span>
+            <span
+              className={`absolute h-5 rounded-full border-2 bg-sky-300  bg-opacity-30 shadow-lg shadow-sky-300 duration-500 md:h-7 ${
+                toggle
+                  ? "w-12 -translate-x-9 border-sky-600 shadow-sky-300"
+                  : "w-16 translate-x-5 border-sky-900 shadow-sky-900"
+              }`}
+            ></span>{" "}
+            <span className="text-sm font-semibold">Bu Hafta</span>
+          </button>
+        </div>
+        {/* ********* All view link *********  */}
+        <div className="me-0 text-xs underline-offset-2 hover:underline md:me-4 md:text-sm">
+          <Link to="movies/trend">Tümü</Link>
+        </div>
+      </div>
+
+      {/* ******** ******** ******** ******** component top flex area END ******** ******** ******** ******** */}
+
+      <div
+        className={` mx-auto flex touch-auto items-center overflow-x-auto rounded-2xl bg-opacity-30 bg-gradient-to-b from-cyan-400 to-sky-950 py-5 dark:from-slate-950 dark:to-sky-900 ${styles.trendScroll}`}
+      >
+        <div className="flex space-x-2">
+          {moviesToShow &&
+            moviesToShow?.slice(7).map((m) => (
+              <div
+                key={m.id}
+                className="snap-start flex-col items-center md:space-y-2"
+              >
+                <div
+                  // className={`group relative mx-1 h-40 w-[133px] cursor-pointer space-y-4 overflow-hidden md:h-52 lg:h-64 lg:w-[152px] xl:w-[166px] 2xl:w-44 ${styles.movieCard}`}
+                  className={`group relative mx-1 h-60  w-40 cursor-pointer ${styles.movieCard}`}
+                  onClick={() => handleMovieClick(m.id, m.title)}
+                >
+                  <img
+                    className=" h-full w-full object-cover duration-500 group-hover:scale-110 group-hover:opacity-40 group-hover:blur-sm "
+                    src={process.env.REACT_APP_API_IMG_2 + m.poster_path}
+                    alt={m.title}
+                    loading="lazy"
+                  />
+
+                  <div className=" absolute top-10 hidden text-sky-100 opacity-0 duration-500 group-hover:-top-2 group-hover:opacity-100 lg:block">
+                    <div
+                      className="float-right"
+                      role="progressbar"
+                      aria-valuenow="67"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                      style={{ "--value": Math.floor(m.vote_average * 10) }}
+                    ></div>
+
+                    <div className="px-2 pb-1 text-xs lg:text-sm  ">
+                      <p>
+                        <span className="font-bold">Toplam Oy:</span>{" "}
+                        {m.vote_count}
+                      </p>
+                      <p>
+                        <span className="font-bold">Orijinal İsim:</span>{" "}
+                        {m.original_title}
+                      </p>
+                      <p className="font-bold">
+                        Vizyon Tarihi:
+                        <span className="text-xs"> {m.release_date}</span>{" "}
+                      </p>
+
+                      <p className="mt-2 leading-[16px] text-sky-100 md:line-clamp-4 xl:line-clamp-5">
+                        <span className="mt-1 font-bold ">Konu:</span>{" "}
+                        {m.overview.length > 120
+                          ? `${m.overview.slice(0, 120)}...`
+                          : m.overview}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  {" "}
+                  <h3 className="mt-2 line-clamp-2 text-xs font-bold text-sky-100 md:mt-0 md:text-sm ">
+                    {m.title}
+                  </h3>
+                </div>
+              </div>
+            ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default TrendMovie;

@@ -1,0 +1,32 @@
+/* div {
+  border: 1px solid red;
+} */
+
+/* Uncaught runtime errors:
+×
+ERROR
+ResizeObserver loop completed with undelivered notifications.
+    at handleError (http://localhost:3000/static/js/bundle.js:89874:58)
+    at http://localhost:3000/static/js/bundle.js:89893:7 */
+
+/* yukarıdaki hatayı bu şekilde çözdüm */
+
+iframe#webpack-dev-server-client-overlay {
+  display: none !important;
+}
+
+/* div {
+  border: 1px solid red;
+} */
+
+.dark body {
+  background-color: rgb(0, 0, 0);
+}
+/* @media (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+} */
+/* Chrome için stil */
+
+/* background-color: rgb(4, 20, 51, 0.9); */

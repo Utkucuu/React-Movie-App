@@ -1,0 +1,25 @@
+.rotation2 {
+  animation: rotate 1s;
+  /* Dönme durumunda yumuşak geçiş ekleyin */
+  transform-style: preserve-3d; /* 3D dönüşü etkinleştirin */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.rotation1 {
+  transition: transform 1s; /* Dönme süresi (1 saniye) */
+  transform-style: preserve-3d; /* 3D dönüşü etkinleştirin */
+}
+
+.rotation1:hover {
+  transform: rotateY(
+    360deg
+  ); /* Sadece hover (mouse girişi) durumunda çalışacak dönüş */
+}

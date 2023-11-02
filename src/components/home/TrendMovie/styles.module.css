@@ -1,0 +1,115 @@
+/* Scrollbar genel özellikleri */
+.trendScroll::-webkit-scrollbar {
+  height: 12px;
+}
+
+/* Scrollbar düğmesi (yukarı/aşağı ok) */
+.trendScroll::-webkit-scrollbar-button {
+  background-color: none;
+}
+
+/* Scrollbar köşesi */
+.trendScroll::-webkit-scrollbar-corner {
+  background-color: #d0d0d0;
+}
+
+/* Scrollbar parça arkaplanı */
+.trendScroll::-webkit-scrollbar-track {
+  background-color: #eff8fe;
+}
+
+/* Scrollbar parça */
+.trendScroll::-webkit-scrollbar-thumb {
+  background-color: #0280c2;
+}
+
+/* Kaydırma olayı sırasında görünen parça */
+.trendScroll::-webkit-scrollbar-thumb:hover {
+  background-color: #045c8d;
+}
+
+/* Aktif olarak kaydırma yaparken görünen parça */
+.trendScroll::-webkit-scrollbar-thumb:active {
+  background-color: #07314c;
+}
+
+@keyframes progress {
+  0% {
+    --percentage: 0;
+  }
+  100% {
+    --percentage: var(--value);
+  }
+}
+
+@property --percentage {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+[role="progressbar"] {
+  --percentage: var(0);
+  --primary: #adf;
+  --secondary: #369;
+  --size: 50px;
+  width: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+[role="progressbar"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(
+    var(--primary) calc(var(--percentage) * 1%),
+    var(--secondary) 0
+  );
+  mask: radial-gradient(white 55%, transparent 0);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(#0000 55%, #000 0);
+  -webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) "%";
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 4);
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.movieCard:hover [role="progressbar"] {
+  animation: progress 1s 0.5s forwards;
+  /* animation-fill-mode: none; */
+}
+
+.movieCard:not(:hover) [role="progressbar"] {
+  animation: none;
+  --percentage: 0;
+}
+
+@media (min-width: 300px) {
+  [role="progressbar"] {
+    --size: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  [role="progressbar"] {
+    --size: 40px;
+  }
+}
+
+/* div {
+  border: 1px solid red;
+} */

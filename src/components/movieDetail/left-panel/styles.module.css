@@ -1,0 +1,42 @@
+/* div {
+  border: 1px solid red;
+} */
+/* .container {
+  display: flex;
+  align-items: stretch;
+} */
+
+/* Scrollbar genel özellikleri */
+.posterScroll::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Scrollbar düğmesi (yukarı/aşağı ok) */
+.posterScroll::-webkit-scrollbar-button {
+  background-color: none;
+}
+
+/* Scrollbar köşesi */
+.posterScroll::-webkit-scrollbar-corner {
+  background-color: #d0d0d0;
+}
+
+/* Scrollbar parça arkaplanı */
+.posterScroll::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #22d2ed, #0e5578);
+}
+
+/* Scrollbar parça */
+.posterScroll::-webkit-scrollbar-thumb {
+  background-color: #bae6fd;
+}
+
+/* Kaydırma olayı sırasında görünen parça */
+/* .posterScroll::-webkit-scrollbar-thumb:hover {
+  background-color: #045c8d;
+} */
+
+/* Aktif olarak kaydırma yaparken görünen parça */
+/* .posterScroll::-webkit-scrollbar-thumb:active {
+  background-color: #07314c;
+} */
