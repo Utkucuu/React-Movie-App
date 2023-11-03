@@ -12,7 +12,9 @@ function SwiperItem({ actors, title }) {
 
   return (
     <div className="mx-auto h-auto rounded-xl bg-sky-100 bg-opacity-5 px-2 pb-2 shadow-xl shadow-sky-700 dark:bg-opacity-100 ">
-      <h3 className="pb-1 text-xl font-bold text-sky-900 ">{title}</h3>
+      <h3 className="pb-1 text-lg font-bold text-sky-900 sm:text-xl ">
+        {title}
+      </h3>
       <Swiper
         style={{}}
         // install Swiper modules

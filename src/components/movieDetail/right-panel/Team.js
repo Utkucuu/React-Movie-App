@@ -41,7 +41,7 @@ function Team() {
     <>
       {/* credits right panel */}
       <div className="flex-col">
-        <h3 className="ms-5 pb-4 text-2xl font-bold text-sky-900 shadow-2xl dark:text-white">
+        <h3 className="ms-5 pb-4 text-lg font-bold text-sky-900 shadow-2xl dark:text-white sm:text-xl">
           Team
         </h3>
 
@@ -62,7 +62,7 @@ function Team() {
 
                 {/* departman içerik */}
                 <div
-                  className={`m-2 ms-0 space-y-4 overflow-y-scroll rounded-lg bg-opacity-30 bg-gradient-to-b from-cyan-400 to-sky-900  px-1 pt-1  dark:from-slate-950 dark:to-sky-900 lg:ms-4 ${
+                  className={`m-2 ms-0 space-y-4 overflow-y-scroll rounded-lg bg-opacity-30 bg-gradient-to-b from-cyan-400 to-sky-900 px-1 pt-1 dark:from-slate-950 dark:to-sky-900 lg:ms-4 ${
                     styles.teamScroll
                   } ${
                     openDepartmentIndex === index

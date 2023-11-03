@@ -79,7 +79,7 @@ function HeroSection() {
     <>
       {" "}
       <div
-        className=" text-md mx-auto flex min-h-[fit] w-full rounded-xl bg-center py-10 text-sm text-white duration-500"
+        className=" text-md mx-auto mt-0 flex min-h-[fit] w-full rounded-t-none bg-center py-10 text-sm text-white duration-500 lg:mt-10 lg:rounded-xl"
         style={containerStyle}
       >
         {movieDetail && (
@@ -117,7 +117,7 @@ function HeroSection() {
                   ></iframe>
                 </div>
               ) : (
-                <div className="absolute -top-10 flex w-full animate-pulse rounded-xl text-center text-sm md:text-lg">
+                <div className="absolute -bottom-60 grid w-full animate-pulse place-content-center rounded-xl text-center text-sm md:text-lg">
                   <p className="whitespace-nowrap rounded-xl  bg-red-500 p-2 font-medium">
                     Fragman Bulunmuyor
                   </p>
