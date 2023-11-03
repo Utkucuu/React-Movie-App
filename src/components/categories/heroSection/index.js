@@ -30,8 +30,8 @@ function CategoriesHeroSection() {
     textTure3.push(process.env.REACT_APP_API_IMG_5 + e.poster_path);
   });
 
-  const mobileS = useMediaQuery({ minWidth: 280, maxWidth: 375 });
-  const mobileM = useMediaQuery({ minWidth: 375, maxWidth: 425 });
+  const mobileS = useMediaQuery({ minWidth: 280, maxWidth: 475 });
+
   const mobileL = useMediaQuery({ minWidth: 425, maxWidth: 768 });
   const tablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
   let width = "100%";
@@ -40,9 +40,6 @@ function CategoriesHeroSection() {
     height = "900px";
   } else if (mobileL) {
     height = "800px";
-    width = "120%";
-  } else if (mobileM) {
-    height = "780px";
     width = "120%";
   } else if (mobileS) {
     height = "780px";
@@ -64,9 +61,9 @@ function CategoriesHeroSection() {
     //   </div>
     // </div>
 
-    <div className="mx-auto mt-10 h-auto overflow-hidden rounded-3xl  bg-gradient-to-b from-sky-400 to-sky-900 shadow-2xl shadow-sky-700 duration-500 ">
+    <div className="mx-auto mt-5 h-auto overflow-hidden rounded-xl bg-gradient-to-b  from-sky-400 to-sky-900 shadow-2xl shadow-sky-700 duration-500 lg:mt-10 ">
       <div
-        className="mx-auto flex h-auto touch-auto items-center justify-around rounded-2xl "
+        className="mx-auto flex h-auto touch-auto items-center justify-around rounded-xl "
         style={{
           position: "relative",
         }}

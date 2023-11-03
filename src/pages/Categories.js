@@ -158,17 +158,17 @@ function Categories() {
         <CategoriesHeroSection />
       </div>
 
-      <div className="mx-auto flex  justify-center px-4 pt-10 lg:hidden">
+      <div className="mx-auto flex  justify-center px-4  py-5 lg:hidden">
         <SearchBar />
       </div>
 
       <div className="divide flex gap-5 divide-x-2 dark:divide-cyan-200 ">
         {/* movie left panel */}
-        <div className="mt-10 w-full px-3 lg:basis-3/4 lg:px-0 ">
+        <div className=" -mt-4 w-full px-3 lg:mt-10 lg:basis-3/4 lg:px-0 ">
           <div className="block lg:hidden">
             <BestMovies />
 
-            <div className="mt-10 flex flex-col items-center justify-center pb-8 sm:flex-row ">
+            <div className="mt-5 flex flex-col items-center justify-center pb-5 sm:flex-row ">
               <div className="pb-2 pe-0  sm:pb-0 sm:pe-2">
                 <SortingTool />
               </div>
@@ -185,7 +185,7 @@ function Categories() {
                 handleSelectedDates={handleSelectedDates}
               />
               <button
-                className=" rounded-lg border-2 border-sky-200 bg-gradient-to-b from-cyan-400 to-sky-900 px-4 font-semibold text-cyan-200 hover:bg-gradient-to-t hover:from-white hover:to-white dark:from-slate-950 dark:to-sky-900"
+                className="mt-2 rounded-lg border-2 border-sky-200 bg-gradient-to-b from-cyan-400 to-sky-900 px-4 font-semibold text-cyan-200 hover:bg-gradient-to-t hover:from-white hover:to-white dark:from-slate-950 dark:to-sky-900"
                 onClick={handleFilter}
               >
                 Getir
