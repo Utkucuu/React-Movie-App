@@ -12,6 +12,7 @@ function WindowViev({ allMovies }) {
   if (isTabletOrMobile) {
     col = 3;
   }
+
   return (
     <div className={`${styleWindow.itemClass}`}>
       <VGrid

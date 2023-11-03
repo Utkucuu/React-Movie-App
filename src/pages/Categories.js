@@ -127,6 +127,12 @@ function Categories() {
       });
     }
 
+    if (filteredMovies.length === 0) {
+      alert("Aradığınız özellikte film bulunamadı...");
+
+      return window.location.reload();
+    }
+
     setFilteredMovies(filteredMovies);
   };
 
