@@ -8,7 +8,7 @@ function Authentication() {
   const [authToggle, setAuthToggle] = useState(true);
   return (
     <div
-      className="mx-auto mt-5 flex h-100 max-w-[400px] flex-col rounded-lg border-4 border-sky-200 bg-gradient-to-b
+      className="mx-auto mt-10 flex h-100 max-w-[400px] flex-col rounded-lg border-4 border-sky-200 bg-gradient-to-b
     from-cyan-400 to-sky-900"
     >
       <div className="relative flex w-full overflow-hidden border-b-2 border-white">
