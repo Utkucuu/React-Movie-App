@@ -99,19 +99,23 @@ function Populer() {
 
   if (movies.length === 0) {
     return (
-      <LoadingAnimate
-        gradientId="myGradient61"
-        color1={"#B1E3FC"}
-        color2={"#22D1EE"}
-        colorText={"text-sky-100"}
-      />
+      <div className="mt-20">
+        <LoadingAnimate
+          gradientId="myGradient61"
+          color1={"#B1E3FC"}
+          color2={"#22D1EE"}
+          colorText={"text-sky-400"}
+        />{" "}
+      </div>
     );
   }
 
   return (
     <div className="mt-10">
       <div className="flex items-center justify-between border-b-2 border-sky-400 px-2 dark:text-sky-200">
-        <h2 className="whitespace-nowrap text-lg font-bold">Popüler Filmler</h2>
+        <h2 className="whitespace-nowrap text-sm font-bold sm:text-lg">
+          Popüler Filmler
+        </h2>
 
         <div className="text-xs underline-offset-2 hover:underline md:text-sm">
           <Link to="movies">Tümü</Link>
@@ -136,7 +140,7 @@ function Populer() {
                 style={{ boxShadow: "0 0 30px rgba(3, 105, 161, 0.8)" }}
               >
                 <img
-                  className="h-16 w-16 rounded-full object-fill xs:h-24 xs:w-24  sm:h-24 sm:w-24  md:h-28 md:w-28 lg:h-[124px] lg:w-[124px] xl:h-40 xl:w-40"
+                  className="h-[60px] w-[60px] rounded-full object-fill xs:h-24 xs:w-24  sm:h-24 sm:w-24  md:h-28 md:w-28 lg:h-[124px] lg:w-[124px] xl:h-40 xl:w-40"
                   src={`${process.env.REACT_APP_API_IMG_2}${movie.poster_path}`}
                   alt={movie.title}
                   loading="lazy"

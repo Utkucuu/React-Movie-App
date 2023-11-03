@@ -11,7 +11,7 @@ function MoviesDetailView({ movies, genres }) {
           {/* Sütun 1 */}
           {i % 2 === 0 && (
             <div
-              className=" grid cursor-pointer grid-cols-6 rounded-lg border-2 border-slate-100 py-5 dark:border-cyan-200 "
+              className=" grid cursor-pointer grid-cols-6 space-x-6 rounded-lg border-2 border-slate-100 px-1 py-5 dark:border-cyan-200 xs:space-x-0 "
               onClick={() => handleMovieClick(movie.id, movie.title)}
             >
               <div className="col-span-2 mx-auto">
@@ -24,9 +24,9 @@ function MoviesDetailView({ movies, genres }) {
               </div>
 
               {/* *********************** */}
-              <div className="col-span-4 pr-4">
+              <div className="col-span-4 pr-0 xs:pr-4">
                 <div className="my-auto border-sky-300 pb-1">
-                  <h2 className=" mt-3 line-clamp-1 text-xl font-bold text-sky-900 dark:text-cyan-500">
+                  <h2 className=" mt-3 line-clamp-1 text-sm font-bold text-sky-900 dark:text-cyan-500 sm:text-xl">
                     {movie.title}
                   </h2>
                   <ul className="mt-2 flex list-disc gap-6 text-xs">
@@ -79,7 +79,7 @@ function MoviesDetailView({ movies, genres }) {
           {/* Sütun 2 */}
           {i % 2 === 1 && (
             <div
-              className=" grid cursor-pointer grid-cols-6 rounded-lg border-2 border-slate-100 py-5 dark:dark:border-cyan-200"
+              className=" grid cursor-pointer grid-cols-6 space-x-6 rounded-lg border-2 border-slate-100 px-1 py-5 dark:dark:border-cyan-200 xs:space-x-0"
               onClick={() => handleMovieClick(movie.id, movie.title)}
               key={movie.id + 1000}
             >
@@ -93,9 +93,9 @@ function MoviesDetailView({ movies, genres }) {
               </div>
 
               {/* *********************** */}
-              <div className="col-span-4 pr-4">
+              <div className="col-span-4 pr-0 xs:pr-4">
                 <div className="my-auto border-sky-300 pb-1">
-                  <h2 className=" mt-3 line-clamp-1 text-xl font-bold text-sky-900 dark:text-cyan-500">
+                  <h2 className=" mt-3 line-clamp-1 text-sm font-bold text-sky-900 dark:text-cyan-500 sm:text-xl">
                     {movie.title}
                   </h2>
                   <ul className="mt-2 flex list-disc gap-6 text-xs">

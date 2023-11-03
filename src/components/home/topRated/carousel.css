@@ -9,7 +9,7 @@
   white-space: nowrap;
   overflow: hidden;
   border: 1px solid rgb(56 189 248) !important;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 2px;
   box-shadow: 0px 5px 10px rgb(56 189 248) !important;
   filter: blur(1px);
@@ -44,4 +44,12 @@
 
 .carousel .control-prev.control-arrow:before {
   border-right: 8px solid #38bdf8 !important;
+}
+
+.legend {
+  bottom: 10px !important;
+}
+
+li.thumb {
+  padding: 0 !important;
 }

@@ -46,11 +46,10 @@ function Home() {
   }, []);
   return (
     <>
-      <div className="mx-auto flex  justify-center px-4 pt-10 lg:hidden">
+      <HomeHeroSection />
+      <div className="mx-auto mt-10  flex justify-center px-4 lg:hidden">
         <SearchBar />
       </div>
-
-      <HomeHeroSection />
       <Populer />
       <TrendMovie />
       <TopRatedMovies />

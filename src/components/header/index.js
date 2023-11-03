@@ -53,7 +53,7 @@ function Header() {
   return (
     <header className="">
       <div className="relative mx-auto rounded-none bg-opacity-20 bg-gradient-to-b from-cyan-400 to-sky-900 p-4  dark:from-slate-950 dark:to-sky-900 lg:rounded-b-xl">
-        <div className="flex items-center justify-around px-12 pt-2 lg:items-center lg:pt-0 ">
+        <div className="flex items-center justify-around  lg:items-center lg:px-12 lg:pt-0 ">
           <Logo />
           <Navbar />
           <div className="ms-20 hidden w-80 justify-center text-center lg:flex">

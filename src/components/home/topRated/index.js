@@ -30,19 +30,21 @@ function TopRatedMovies() {
 
   if (movies.length === 0) {
     return (
-      <LoadingAnimate
-        gradientId="myGradient87"
-        color1={"#B1E3FC"}
-        color2={"#22D1EE"}
-        colorText={"text-sky-100"}
-      />
+      <div className="mt-20">
+        <LoadingAnimate
+          gradientId="myGradient87"
+          color1={"#B1E3FC"}
+          color2={"#22D1EE"}
+          colorText={"text-sky-400"}
+        />
+      </div>
     );
   }
 
   return (
     <div className="mt-10 border-b-2 border-sky-400">
       <div className="flex items-center justify-between border-b-2 border-sky-400 px-2 dark:text-sky-200">
-        <h2 className="whitespace-nowrap text-lg font-bold">
+        <h2 className="whitespace-nowrap text-sm font-bold sm:text-lg">
           En Çok Oy Alan Filmler
         </h2>
 
@@ -52,7 +54,7 @@ function TopRatedMovies() {
       </div>
       <div className="mx-auto mt-4 overflow-hidden xs:w-full">
         <Carousel
-          className="overflow-hidden rounded-3xl "
+          className="overflow-hidden rounded-xl px-2"
           showArrows={false}
           showStatus={false}
           showIndicators={false}
@@ -69,23 +71,23 @@ function TopRatedMovies() {
           {populerMovies &&
             movies.map((movie) => (
               <div
-                className="h-48 overflow-hidden rounded-3xl sm:h-72 md:h-80 lg:h-100 xl:h-[540px]"
+                className="h-48 overflow-hidden rounded-xl sm:h-72 md:h-80 lg:h-100 xl:h-[540px]"
                 key={movie.id}
               >
                 <img
-                  className="h-full w-full rounded-3xl object-fill"
+                  className="h-full w-full rounded-xl object-fill"
                   src={process.env.REACT_APP_API_IMG_ORG + movie.backdrop_path}
                   alt={movie.title}
                   loading="lazy"
                 />
                 <p
-                  className="legend"
+                  className="legend "
                   style={{
                     backgroundColor: "transparent",
                   }}
                 >
                   <button
-                    className="rounded-lg border-2 border-sky-300 bg-white px-4 py-1 font-bold text-sky-300 hover:bg-slate-100 dark:bg-black dark:hover:bg-slate-700"
+                    className="text-xss mt-10 rounded-lg  border-2 border-sky-300 bg-white px-4 py-[2px] font-bold text-sky-300 hover:bg-slate-100 dark:bg-black dark:hover:bg-slate-700 sm:py-1 sm:text-sm"
                     onClick={() => handleMovieClick(movie.id, movie.title)}
                   >
                     {movie.title}
