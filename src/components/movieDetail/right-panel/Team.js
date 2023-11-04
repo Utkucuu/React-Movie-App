@@ -4,7 +4,6 @@ import styles from "./styles.module.css";
 import ArrowDown from "../../../assest/icons/ArrowDown";
 import LoadingAnimate from "../../loadingAnimate";
 function Team() {
-  console.log("MOVIE DETAIL TEAM rendered");
   const state = useMovie();
 
   const movieCredits = state?.movieCredits?.data;

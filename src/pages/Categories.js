@@ -23,7 +23,6 @@ function Categories() {
   const [dateIntervals, setDateIntervals] = useState([]);
   const [viewToggle, setViewToggle] = useState(true);
 
-  console.log(" PAGE CATEGORİES rendered");
   const location = useLocation();
 
   useEffect(() => {

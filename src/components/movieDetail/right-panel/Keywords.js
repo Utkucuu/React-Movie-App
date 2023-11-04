@@ -2,8 +2,6 @@ import { useMovie } from "../../../context/SiteContext";
 import LoadingAnimate from "../../loadingAnimate";
 
 function Keywords() {
-  console.log("MOVIE DETAIL KEYWORD rendered");
-
   const state = useMovie();
 
   const keywords = state?.movieKeywords?.data?.keywords;

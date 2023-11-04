@@ -7,7 +7,7 @@ import BestMovies from "../../components/movies/rightPanel/BestMovies";
 import SearchBar from "../../components/search";
 function MoviesLayout() {
   /* MoviesLayout componentini de outlet hale getirdim ve index true dediğim için AllMovies.js bu filmler e tıklandığında bu component ile birilkte render olacak.*/
-  console.log("MOVIES INDEX rendered");
+
   return (
     // movie container
     <div className="mx-auto">

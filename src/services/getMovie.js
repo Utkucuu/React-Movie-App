@@ -34,5 +34,3 @@ export const getTopRated = (page) => get(`movie/top_rated`, false, page); // hat
 export const getUpComingPage = (page) => get(`movie/upcoming`, false, page);
 
 export const getUpComing = () => get(`movie/upcoming`);
-
-console.log(" SERVICES GETMOVIE rendered");

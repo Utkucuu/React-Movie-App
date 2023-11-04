@@ -3,7 +3,6 @@ import LoadingAnimate from "../../loadingAnimate";
 import { useHandleMovieClick } from "../../../utils/navigateDetail";
 
 function BestMovies() {
-  console.log("MOVIES BEST MOVIE rendered");
   const { bestMovie } = useBestMovie([]);
 
   const handleMovieClick = useHandleMovieClick();

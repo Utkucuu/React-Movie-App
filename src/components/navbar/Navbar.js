@@ -3,7 +3,7 @@ import { useToggle } from "../../context/NavToggleContext";
 
 function Navbar() {
   const { toggle, setToggle } = useToggle();
-  console.log("navbar NAVBAR rendered");
+
   const toggleHandle = () => {
     setToggle(!toggle);
   };

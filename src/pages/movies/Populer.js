@@ -7,8 +7,6 @@ import MoviesWindowView from "../../components/movies/leftPanel/MoviesWindowView
 import MoviesDetailView from "../../components/movies/leftPanel/MoviesDetailView";
 import LoadingAnimate from "../../components/loadingAnimate";
 function Populer() {
-  console.log("MOVIES POPULER PAGE rendered");
-
   const { selectedOption } = useOption();
 
   const [populerMovies, setPopulerMovies] = useState([]);
@@ -30,8 +28,6 @@ function Populer() {
     setScrollState(scrollY);
   });
   const [movieGenres, setMovieGenres] = useState();
-
-  // console.log(scrollState, windowHeight, documentHeight);
 
   // Verileri almak için ayrı bir hook kullanın
   useEffect(() => {

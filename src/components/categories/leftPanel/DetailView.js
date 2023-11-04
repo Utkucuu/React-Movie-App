@@ -5,8 +5,6 @@ import { useHandleMovieClick } from "../../../utils/navigateDetail";
 import stylesDetail from "./stylesDetail.module.css";
 
 function DetailView({ allMovies, genres }) {
-  console.log("CATEGORİES DETAILWIEW rendered");
-
   const handleMovieClick = useHandleMovieClick();
 
   // const isTabletOrMobile = useMediaQuery({ minWidth: 0, maxWidth: 768 });

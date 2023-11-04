@@ -4,8 +4,6 @@ import HeroSection from "../components/movieDetail/heroSection/index.js";
 import RightPanel from "../components/movieDetail/right-panel/index.js";
 
 function MovieDetail() {
-  console.log(" PAGE MOVIE DETAİL rendered");
-
   useEffect(() => {
     window.scrollTo(0, 0); // Sayfa yüklenirken en üstüne gitmek için
   }, []);

@@ -5,8 +5,6 @@ const Context = createContext();
 export const useUser = () => useContext(Context);
 
 const UserProvider = ({ children }) => {
-  console.log("AUTHCONTEXT rendered");
-
   const [sessionHandle, setSessionHandle] = useState(
     localStorage.getItem("sessionHandle") || false,
   );

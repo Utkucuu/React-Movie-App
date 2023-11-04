@@ -7,8 +7,6 @@ import MoviesWindowView from "../../components/movies/leftPanel/MoviesWindowView
 import MoviesDetailView from "../../components/movies/leftPanel/MoviesDetailView";
 
 function TopRated() {
-  console.log("MOVIES TO PRATED PAGE rendered");
-
   const [pageId, setPageId] = useState(1);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [movieGenres, setMovieGenres] = useState();

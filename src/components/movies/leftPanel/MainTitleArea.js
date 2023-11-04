@@ -9,7 +9,6 @@ function MainTitleArea({
   showMoviesWeekly,
   toggle,
 }) {
-  console.log("MOVIES MAIN TITLE AREA rendered");
   return (
     <div className="flex items-center justify-between space-x-4 pb-2 text-center text-lg font-bold text-sky-900">
       <div className="">

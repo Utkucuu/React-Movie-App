@@ -6,7 +6,6 @@ import { useHandleMovieClick } from "../../../utils/navigateDetail";
 import LoadingAnimate from "../../loadingAnimate";
 
 function TrendMovie() {
-  console.log("HOMETRENDMOVIE rendered");
   const [toggle, setToggle] = useState(true);
 
   const state = useMovie();

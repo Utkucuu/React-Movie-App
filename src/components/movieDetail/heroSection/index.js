@@ -9,8 +9,6 @@ import SaveBtn from "./SaveBtn";
 import LikeBtn from "./LikeBtn";
 
 function HeroSection() {
-  console.log("MOVIEDETAIL HERO rendered");
-
   const { user } = useUser();
 
   const state = useMovie();

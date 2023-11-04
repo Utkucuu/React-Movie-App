@@ -3,18 +3,16 @@ import { Chart, registerables } from "chart.js";
 import { useMovie } from "../../../context/SiteContext";
 import LoadingAnimate from "../../loadingAnimate";
 
+// Bu component temsili !!!!!!
+
 // Chart.js özelliklerini veya eklentilerini etkinleştirmek için kullnılır.
 Chart.register(...registerables);
 
 const LineChart = () => {
-  console.log("MOVIE DETAIL LINECHART rendered");
-
   const state = useMovie();
 
   //API içinde, aylara göre oylama verileri şeklinde bir data bulamadım. Ben de çözüm olarak poster sayfasında kullandığım posterlerin vote_average verilerini alıp grafik içinde kullandım. X eksenine de ayları yazdım. Sağlıklı olmadı ancak aklımdaki görseli implement edebildim.
   const postersScore = state?.moviePosters?.data?.posters;
-
-  console.log(postersScore);
 
   const labels = ["January", "February", "March", "April", "May", "June"];
 

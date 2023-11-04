@@ -7,7 +7,6 @@ import "./carousel.css";
 import LoadingAnimate from "../../loadingAnimate";
 
 function TopRatedMovies() {
-  console.log("HOMETOPRATED rendered");
   const [populerMovies, setPopulerMovies] = useState();
 
   const handleMovieClick = useHandleMovieClick();

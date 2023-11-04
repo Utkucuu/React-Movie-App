@@ -5,8 +5,6 @@ import CubeItem from "./CubeItem";
 import ReactPlayer from "react-player";
 
 function CategoriesHeroSection() {
-  console.log("categoriesHERO rendered");
-
   const state = useMovie();
 
   const trendDaily = state?.trendDaily?.data?.results || [];

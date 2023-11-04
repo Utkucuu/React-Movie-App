@@ -1,8 +1,6 @@
 import axios from "axios";
 
 async function Request(url, language = false, page = false) {
-  console.log("SERVICES REQUEST JS rendered");
-
   const options = {
     method: "GET",
     url: process.env.REACT_APP_MOVIES + url,

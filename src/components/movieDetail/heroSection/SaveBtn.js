@@ -2,7 +2,6 @@ import { useUser } from "../../../context/AuthContext";
 import SaveIcon from "../../../assest/icons/SaveIcon";
 
 function SaveBtn({ movieDetail, saveBtnStyle, setSaveBtnStyle }) {
-  console.log(" MOVIEDETAIL HERO SAVEBTN rendered");
   const { user } = useUser();
 
   const handleSaveMovie = () => {

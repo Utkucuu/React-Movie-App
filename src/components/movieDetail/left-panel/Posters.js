@@ -6,8 +6,6 @@ import ModalCloseICon from "../../../assest/icons/ModalCloseICon";
 import LoadingAnimate from "../../loadingAnimate";
 
 function Posters() {
-  console.log("MOVIE DETAIL POSTER rendered");
-
   const state = useMovie();
   const posters = state?.moviePosters?.data?.posters || [];
   const logos = state?.moviePosters?.data?.logos || [];

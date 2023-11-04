@@ -5,8 +5,6 @@ import { Hud, OrbitControls, OrthographicCamera } from "@react-three/drei";
 import { TextureLoader } from "three"; // TextureLoader ekleyin
 import { useMediaQuery } from "react-responsive";
 export default function CubeCanvas({ textTures }) {
-  console.log("CUBEITEM rendered");
-
   return (
     <Canvas>
       <ambientLight intensity={1} />

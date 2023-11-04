@@ -3,8 +3,6 @@ import Login from "../../components/auth/Login";
 import Register from "../../components/auth/Register";
 
 function Authentication() {
-  console.log("AUTHENTİCATİON rendered");
-
   const [authToggle, setAuthToggle] = useState(true);
   return (
     <div

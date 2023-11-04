@@ -1,14 +1,7 @@
 import PrevIcon from "../../assest/icons/PrevIcon";
 import NextIcon from "../../assest/icons/NextIcon";
 
-function TrendPagination({
-  totalPages,
-  currentPage,
-  onPageChange,
-  // setSelectedOption,
-}) {
-  // const { setSelectedOption } = useOption();
-
+function TrendPagination({ totalPages, currentPage, onPageChange }) {
   console.log("PAGINATIONS TREND PAGI  rendered");
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages && newPage !== currentPage) {
@@ -22,7 +15,6 @@ function TrendPagination({
         className="rounded-lg border-2 border-cyan-500 bg-gradient-to-l from-cyan-400 to-sky-900 p-1 dark:from-slate-950 dark:to-sky-900"
         onClick={() => {
           handlePageChange(Number(currentPage) - 1);
-          // setSelectedOption("1");
         }}
         disabled={currentPage === 1}
       >
@@ -35,7 +27,6 @@ function TrendPagination({
         className="rounded-lg border-2 border-cyan-500 bg-gradient-to-r from-cyan-400 to-sky-900 p-1 dark:from-slate-950 dark:to-sky-900"
         onClick={() => {
           handlePageChange(Number(currentPage) + 1);
-          // setSelectedOption("1");
         }}
         disabled={currentPage === totalPages}
       >

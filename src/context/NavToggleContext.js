@@ -8,7 +8,6 @@ export const useToggle = () => useContext(Context);
 // data ya 2  componenttren de ulaşabilmek için Header componentini NavToggleProvider ile sarmaladım ve  MobileNavbar ile Navbar içinde useToggle u kullanarak state i hem yönettim hem de componentler arasındaki iletişimi sağladım.
 
 const NavToggleProvider = ({ children }) => {
-  console.log("NAV TOGGLE CONTEXT rendered");
   const [toggle, setToggle] = useState(false);
 
   const data = {

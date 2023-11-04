@@ -3,8 +3,6 @@ import heroHome from "./heroHome.module.css";
 import { MovieServices } from "../../../services";
 import ReactPlayer from "react-player";
 function HomeHeroSection() {
-  console.log("HOMEHERO rendered");
-
   const [heroTrailers, setHeroTrailers] = useState([]);
 
   useEffect(() => {

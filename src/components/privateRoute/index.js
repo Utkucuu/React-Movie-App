@@ -3,7 +3,6 @@ import { Navigate } from "react-router-dom";
 
 export function PrivateProfile({ children }) {
   const { user } = useUser();
-  console.log("PRIVATE ROUTE INDEX rendered");
 
   if (!user) {
     return <Navigate to="/auth" />;

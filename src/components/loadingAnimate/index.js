@@ -1,7 +1,6 @@
 import { memo } from "react";
 import FilmTapeIcon from "../../assest/icons/FilmTapeIcon";
 function LoadingAnimate({ gradientId, color1, color2, colorText }) {
-  console.log("LOADINGANIMATE rendered");
   return (
     <div className="flex items-center justify-center">
       <div className="h-10 w-10 animate-spin">

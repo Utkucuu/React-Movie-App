@@ -4,7 +4,6 @@ import PrevIcon from "../../assest/icons/PrevIcon";
 import NextIcon from "../../assest/icons/NextIcon";
 import { useLocation } from "react-router-dom";
 function Pagination() {
-  console.log("PAGINATINONS UPCOMING PAGI rendered");
   const paginatePath = useGeneratePath();
   //   const itemsPerPage = 7;  Her sayfada görüntülenen öğe sayısı
   const totalPages = Math.ceil(20); // Toplam sayfa sayısı

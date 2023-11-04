@@ -6,8 +6,6 @@ import reducer from "../reducer/movieReducer";
 
 const Context = createContext();
 
-console.log("SİTE CONTEXT rendered");
-
 export const useMovie = () => useContext(Context);
 
 let initialState = {
@@ -30,7 +28,6 @@ const MovieProvider = ({ children }) => {
   const id = pathPart[2];
   const pageId = pathPart[4];
 
-  console.log(pathPart[2]);
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
@@ -49,7 +46,6 @@ const MovieProvider = ({ children }) => {
 
       // let populerMovies;
 
-      console.log(pathPart[1], pathPart[2]);
       //pathPart[1] movies e eşit değiil ise anasayfada ya da detail sayfasındayız ve detail sayfasındaysak pathPart[2] değeri bir id olacak. Bunu da detail sayfasında tıklanan film için kullanacağım.
       //Eğer filmler sayfasındaysak pathPart[2] değeri trend, soon gibi bir değer almış olacak yani o path e göre tıklama yapıldığında istek atıp veri çekmiş olacağım.
       switch (pathPart[1] !== "movies" ? pathPart[1] : pathPart[2]) {
@@ -62,8 +58,6 @@ const MovieProvider = ({ children }) => {
           upComingMovies = payload;
           break;
         case "trend":
-          console.log(1);
-
           if (pageId) {
             payload = await MovieServices.getTrendDailyPage(pageId);
             trendDaily = payload;
@@ -89,12 +83,11 @@ const MovieProvider = ({ children }) => {
           break;
 
         case "upcoming":
-          console.log(pageId, "88888888888888888888");
           payload = await MovieServices.getUpComingPage(pageId);
           // payload = await MovieServices.getUpComingPage();
 
           upComingPage = payload;
-          console.log("context", upComingPage);
+
           payload = await MovieServices.getMovieGenres();
           movieGenres = payload;
           break;
@@ -145,8 +138,6 @@ const MovieProvider = ({ children }) => {
     axioshData();
     // }, [path, id, pageId]);
   }, [path, id, pageId]);
-
-  console.log(state);
 
   const data = {
     ...state,

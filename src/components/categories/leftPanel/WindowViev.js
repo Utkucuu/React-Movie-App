@@ -4,7 +4,6 @@ import { useMediaQuery } from "react-responsive";
 import styleWindow from "./stylesWindow.module.css";
 function WindowViev({ allMovies }) {
   const handleMovieClick = useHandleMovieClick();
-  console.log("CATEGORİES WİNDOWWIEW rendered");
 
   const isTabletOrMobile = useMediaQuery({ minWidth: 0, maxWidth: 768 });
 

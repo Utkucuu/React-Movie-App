@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import { useUser } from "../../context/AuthContext";
 
 function Header() {
-  console.log("HEADER rendered");
   const { user, setUser } = useUser();
 
   const handleLogout = () => {

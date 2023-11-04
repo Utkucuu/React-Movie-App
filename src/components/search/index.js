@@ -9,8 +9,6 @@ function SearchBar() {
 
   const handleMovieClick = useHandleMovieClick();
 
-  console.log("search rendered");
-
   useMemo(() => {
     const axiosData = async () => {
       try {
@@ -64,10 +62,6 @@ function SearchBar() {
   const handleToggleChange = (e) => {
     e.target.value ? setSearchAreaToggle(true) : setSearchAreaToggle(false);
   };
-
-  console.log(filtered);
-  console.log(filterText);
-  console.log(searchAreaToggle);
 
   return (
     <div className="relative mr-0 flex w-100 items-center justify-center lg:mr-24 lg:max-w-none lg:justify-end">

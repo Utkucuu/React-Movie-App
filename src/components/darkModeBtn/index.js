@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
 function DarkBtn() {
-  console.log("DARKMODE BTN rendered");
-
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") === "light" ? "dark" : "light",
   );

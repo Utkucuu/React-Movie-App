@@ -1,7 +1,6 @@
 import { generatePath, useNavigate } from "react-router-dom";
 
 export function useHandleMovieClick() {
-  console.log(" UTILS NAVİGATE DETAİL rendered");
   const navigate = useNavigate();
   const handleMovieClick = (movieId, movieTitle) => {
     const title = movieTitle.replace(/:/g, "").replace(/\s+/g, "-");

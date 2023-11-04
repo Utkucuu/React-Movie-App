@@ -2,8 +2,6 @@ import { useMovie } from "../../../context/SiteContext";
 import SwiperItem from "./SwiperItem";
 
 function AllActors() {
-  console.log(" MOVIEDETAIL ALL ACTORS rendered");
-
   const state = useMovie();
 
   const movieCredits = state?.movieCredits?.data;

@@ -4,7 +4,6 @@ import EyeSlashIcon from "../../assest/icons/EyeSlashIcon";
 import { generateUUID } from "three/src/math/MathUtils";
 
 function Register() {
-  console.log("REGİSTER rendered");
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -104,7 +103,7 @@ function Register() {
         inputRef.current.innerText = errorMessage;
       } else {
         // Kayıt işlemi başarılı, localStorage a gönderilebilir.
-        console.log("Kayıt Bilgileri:", { ...formData });
+
         inputRef.current.innerText = "Kayıt Başarılı. Yönlendiriliyorsunuz..";
         // Kullanıcıyı local storage'a kaydet
         storedUsers.push(formData);

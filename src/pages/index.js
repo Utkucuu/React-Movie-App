@@ -7,8 +7,6 @@ import BestProvider from "../context/BestMoviesContext";
 
 import UpArrow from "../components/upArrow";
 function SiteLayout() {
-  console.log(" PAGE SİTELAYOUT rendered");
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

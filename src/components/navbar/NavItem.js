@@ -1,7 +1,6 @@
 import { memo } from "react";
 import { NavLink } from "react-router-dom";
 function NavItem({ children, to }) {
-  console.log("NAVBAR NAVITEM rendered");
   return (
     <>
       <NavLink

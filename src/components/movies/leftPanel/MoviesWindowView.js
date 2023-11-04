@@ -1,7 +1,6 @@
 import { useHandleMovieClick } from "../../../utils/navigateDetail";
 
 function MoviesWindowView({ movies }) {
-  console.log("MOVIES WINDIW WIEW rendered");
   const handleMovieClick = useHandleMovieClick();
 
   return (

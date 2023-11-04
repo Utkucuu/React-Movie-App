@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
 function TopPageNavItem({ children, to }) {
-  console.log("MOVIES PAGE NAVITEM rendered");
   return (
     <div className="grid w-full place-items-center px-1 xs:px-2 md:px-0">
       <NavLink

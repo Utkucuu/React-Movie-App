@@ -3,8 +3,6 @@ import { useUser } from "../context/AuthContext";
 import { useHandleMovieClick } from "../utils/navigateDetail";
 import ProfileIcon from "../assest/icons/ProfileIcon";
 function Profile() {
-  console.log(" PAGE PROFİLE rendered");
-
   const { user } = useUser();
   const [userState, setUserState] = useState(null); // Başlangıçta null olarak ayarlayın
 

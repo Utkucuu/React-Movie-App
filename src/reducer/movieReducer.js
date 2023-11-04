@@ -1,5 +1,4 @@
 const reducer = (prevState, action) => {
-  console.log(" REDUCER rendered");
   switch (action.type) {
     case "":
       return {

@@ -1,7 +1,6 @@
 import { useHandleMovieClick } from "../../../utils/navigateDetail";
 
 function MoviesDetailView({ movies, genres }) {
-  console.log("MOVIES DETAIL WIEW rendered");
   const handleMovieClick = useHandleMovieClick();
 
   return (

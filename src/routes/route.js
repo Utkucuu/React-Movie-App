@@ -10,7 +10,7 @@ import Populer from "../pages/movies/Populer";
 import Profile from "../pages/Profile";
 import Authentication from "../pages/auth/Authentication";
 import { PrivateProfile, PrivateAuth } from "../components/privateRoute";
-console.log(" ROUTE rendered");
+
 const routes = [
   {
     path: "",

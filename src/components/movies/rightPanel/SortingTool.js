@@ -3,7 +3,7 @@ import { useOption } from "../../../context/SelectContext";
 import { useLocation } from "react-router-dom";
 function SortingTool() {
   // Seçili seçenek durumunu saklayan state
-  console.log("MOVIES SORTING TOOL rendered");
+
   const { selectedOption, setSelectedOption } = useOption(false);
 
   const location = useLocation();

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import "./style.css";
 function MoviesHeroSection() {
   const [populerMovies, setPopulerMovies] = useState();
-  console.log("MOVIES HERO rendered");
+
   useEffect(() => {
     const getMovies = async function (pageId) {
       await MovieServices.getPopulerMovies(pageId)

@@ -13,8 +13,6 @@ import MoviesDetailView from "../../components/movies/leftPanel/MoviesDetailView
 import LoadingAnimate from "../../components/loadingAnimate";
 // import LoadingAnimate from "../../components/loadingAnimate";
 function Trend() {
-  console.log("MOVIES TREND PAGE rendered");
-
   const { selectedOption } = useOption();
 
   const paginatePath = useGeneratePath();

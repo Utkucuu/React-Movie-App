@@ -5,7 +5,6 @@ const Context = createContext();
 export const useBestMovie = () => useContext(Context);
 
 const BestProvider = ({ children }) => {
-  console.log("BEST MOVIES rendered");
   const [bestMovie, setBestMovie] = useState();
   const data = {
     bestMovie,

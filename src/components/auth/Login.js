@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/AuthContext";
 function Login() {
   const navigate = useNavigate();
-  console.log("LOGIN rendered");
+
   const { setUser } = useUser();
   const [formData, setFormData] = useState({
     username: "",
@@ -36,9 +36,9 @@ function Login() {
       if (foundUser) {
         foundUser.isLoggedIn = true;
         localStorage.setItem("activeUser", JSON.stringify(foundUser));
-        console.log(foundUser);
+
         setUser(foundUser);
-        setError("giriş başarılı");
+        setError("Giriş başarılı");
         localStorage.setItem("sessionHandle", "true");
 
         navigate("/profile");

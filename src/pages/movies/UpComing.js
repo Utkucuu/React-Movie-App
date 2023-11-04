@@ -9,8 +9,6 @@ import MoviesWindowView from "../../components/movies/leftPanel/MoviesWindowView
 import MoviesDetailView from "../../components/movies/leftPanel/MoviesDetailView";
 
 function Upcoming() {
-  console.log("MOVIES UP COMING PAGE rendered");
-
   const state = useMovie();
 
   const { selectedOption } = useOption();

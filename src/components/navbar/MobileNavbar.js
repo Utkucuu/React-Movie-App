@@ -4,7 +4,6 @@ import { useUser } from "../../context/AuthContext";
 import { useMediaQuery } from "react-responsive";
 function MobileMenu() {
   const { user, setUser } = useUser();
-  console.log("NAVBAR MOBILE NAVBAR rendered");
 
   const { toggle, setToggle } = useToggle();
 

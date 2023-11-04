@@ -10,7 +10,6 @@ import "swiper/css/pagination";
 import "./styles.css";
 
 function MovieUpComing() {
-  console.log("HOMEUPCOMING rendered");
   const state = useMovie();
 
   const movies = state?.upComingMovies?.data?.results || [];

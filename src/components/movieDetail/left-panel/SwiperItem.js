@@ -8,8 +8,6 @@ import "swiper/css/pagination";
 import LoadingAnimate from "../../loadingAnimate";
 
 function SwiperItem({ actors, title }) {
-  console.log("MOVIE DETAIL SWIPER rendered");
-
   return (
     <div className="mx-auto h-auto rounded-xl bg-sky-100 bg-opacity-5 px-2 pb-2 shadow-xl shadow-sky-700 dark:bg-opacity-100 ">
       <h3 className="pb-1 text-lg font-bold text-sky-900 sm:text-xl ">
@@ -37,8 +35,6 @@ function SwiperItem({ actors, title }) {
         navigation
         // pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("")}
       >
         {(actors &&
           actors.map((a) => (

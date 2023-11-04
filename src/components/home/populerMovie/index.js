@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import populer from "./populer.module.css";
 import LoadingAnimate from "../../loadingAnimate";
 function Populer() {
-  console.log("HOMEPOPULER rendered");
   const [populerMovies, setPopulerMovies] = useState();
 
   const handleMovieClick = useHandleMovieClick();

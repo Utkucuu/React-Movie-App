@@ -1,5 +1,4 @@
 function SortDates({ selectedDates, handleSelectedDates, dateIntervals }) {
-  console.log("CATEGORIES SORTDATES rendered");
   return (
     <div className="">
       <select

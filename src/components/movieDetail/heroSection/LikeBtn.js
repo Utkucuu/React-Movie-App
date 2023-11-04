@@ -1,7 +1,6 @@
 import { useUser } from "../../../context/AuthContext";
 import LikeIcon from "../../../assest/icons/LikeIcon";
 function LikeBtn({ movieDetail, likeBtnStyle, setLikeBtnStyle }) {
-  console.log(" MOVIE DETAIL HERO LIKE BTN rendered");
   const { user } = useUser();
 
   const handleLikeMovie = () => {

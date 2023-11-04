@@ -1,5 +1,4 @@
 function sortGenres({ handleSelectedGenres, selectedGenres, movieGenres }) {
-  console.log("CATEGORIES SORTGENRES rendered");
   return (
     <>
       <div className="">
