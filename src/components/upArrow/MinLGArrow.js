@@ -29,14 +29,15 @@ function MinLGArrow() {
       </button>
 
       <button
-        className=" fixed bottom-10 right-6 z-10  flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-t from-cyan-400 to-sky-900 hover:bg-gradient-to-b"
+        className=" fixed bottom-10 right-6 z-20  hidden h-10 w-10 items-center justify-center rounded-full bg-gradient-to-t from-cyan-400 to-sky-900 hover:bg-gradient-to-b lg:flex"
         onClick={() => window.scrollTo(0, 0)}
       >
         <ArrowUp />
-        <span className=" absolute top-10 p-1 text-[10px] font-bold text-sky-900 opacity-0 duration-500 group-hover:opacity-70 dark:text-sky-100">
+        <span className=" absolute top-10 p-1 text-[10px] font-bold text-sky-900 opacity-0 duration-500 group-hover:opacity-70 dark:text-sky-100 ">
           Yukarı
         </span>
       </button>
+
       <button
         className=" fixed bottom-10 right-6 hidden h-10 w-10 items-center justify-center rounded-full bg-gradient-to-t from-cyan-400 to-sky-900 duration-500 hover:bg-gradient-to-b group-hover:right-[72px] lg:flex "
         onClick={() => navigate("/categories")}
