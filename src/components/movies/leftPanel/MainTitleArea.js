@@ -39,7 +39,7 @@ function MainTitleArea({
 
       <div className="flex items-center gap-x-2 sm:gap-x-5">
         <div className="group relative">
-          <span className="absolute -left-2 -top-9 mt-2 rounded-md bg-sky-800 p-1 text-xs font-thin tracking-wider text-cyan-200 opacity-0 duration-500 group-hover:opacity-100">
+          <span className="absolute -left-2 -top-9 mt-2 hidden rounded-md bg-sky-800 p-1 text-xs font-thin tracking-wider text-cyan-200 opacity-0 duration-500 group-hover:opacity-100 sm:block">
             Pencere
           </span>
           <button
@@ -55,7 +55,7 @@ function MainTitleArea({
           </button>
         </div>
         <div className="group relative">
-          <span className="absolute -right-1 -top-9 mt-2 rounded-md bg-sky-800 p-1 text-xs font-thin tracking-wider text-cyan-200 opacity-0 duration-500 group-hover:opacity-100">
+          <span className="absolute -right-1 -top-9 mt-2 hidden rounded-md bg-sky-800 p-1 text-xs font-thin tracking-wider text-cyan-200 opacity-0 duration-500 group-hover:opacity-100 sm:block">
             Detay
           </span>
           <button
