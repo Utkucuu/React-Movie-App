@@ -146,7 +146,7 @@ function HeroSection() {
               </div>
               <div className="flex space-x-4">
                 <p>{convertTime(movieDetail.runtime)}</p>
-                {movieDetail.genres.map((e) => (
+                {movieDetail.genres.slice(0, 3).map((e) => (
                   <li key={e.id} className="marker:text-sky-400">
                     {" "}
                     {e.name}{" "}
