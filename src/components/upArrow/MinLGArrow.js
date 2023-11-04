@@ -13,7 +13,7 @@ function MinLGArrow() {
         onClick={() => navigate("/")}
       >
         <HomeIcon />
-        <span className=" absolute top-10 p-1 text-[10px] font-bold text-sky-900 opacity-0 duration-500 group-hover:opacity-70 dark:text-sky-100">
+        <span className=" absolute top-10 p-1 text-[10px] font-bold text-sky-900 opacity-0 duration-500 group-hover:opacity-100 dark:text-sky-100">
           Anasayfa
         </span>
       </button>
@@ -23,7 +23,7 @@ function MinLGArrow() {
         onClick={() => navigate("/movies")}
       >
         <FilmIcon />
-        <span className=" absolute top-10 p-1 text-[10px] font-bold text-sky-900 opacity-0 duration-500 group-hover:opacity-70 dark:text-sky-100">
+        <span className=" absolute top-10 p-1 text-[10px] font-bold text-sky-900 opacity-0 duration-500 group-hover:opacity-100 dark:text-sky-100">
           Filmler
         </span>
       </button>
@@ -33,7 +33,7 @@ function MinLGArrow() {
         onClick={() => window.scrollTo(0, 0)}
       >
         <ArrowUp />
-        <span className=" absolute top-10 p-1 text-[10px] font-bold text-sky-900 opacity-0 duration-500 group-hover:opacity-70 dark:text-sky-100 ">
+        <span className=" absolute top-10 p-1 text-[10px] font-bold text-sky-900 opacity-0 duration-500 group-hover:opacity-100 dark:text-sky-100 ">
           Yukarı
         </span>
       </button>
@@ -44,7 +44,7 @@ function MinLGArrow() {
       >
         {" "}
         <CategoryIcon />
-        <span className=" absolute top-10 p-1 text-[10px] font-bold text-sky-900 opacity-0 duration-500 group-hover:opacity-70 dark:text-sky-100">
+        <span className=" absolute top-10 p-1 text-[10px] font-bold text-sky-900 opacity-0 duration-500 group-hover:opacity-100 dark:text-sky-100">
           Kategoriler
         </span>
       </button>
