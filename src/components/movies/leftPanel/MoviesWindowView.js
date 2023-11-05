@@ -6,9 +6,9 @@ function MoviesWindowView({ movies }) {
   return (
     <section className="mt-4 grid grid-cols-3 gap-x-5 gap-y-10 md:grid-cols-4 lg:grid-cols-5">
       {movies &&
-        movies?.map((movie, i) => (
+        movies?.map((movie) => (
           <article
-            key={i}
+            key={movie.id}
             className={`group relative cursor-pointer`}
             onClick={() => handleMovieClick(movie.id, movie.title)}
           >

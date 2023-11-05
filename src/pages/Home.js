@@ -5,7 +5,7 @@ import HomeHeroSection from "../components/home/heroSection";
 import Populer from "../components/home/populerMovie";
 import TopRatedMovies from "../components/home/topRated";
 import MovieUpComing from "../components/home/upComing";
-import Footer from "../components/Footer";
+import Footer from "../components/footer";
 function Home() {
   useEffect(() => {
     window.scrollTo(0, 0); // Sayfa yüklenirken en üstüne gitmek için

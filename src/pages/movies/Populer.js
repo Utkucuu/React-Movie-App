@@ -10,10 +10,8 @@ function Populer() {
   const { selectedOption } = useOption();
 
   const [populerMovies, setPopulerMovies] = useState([]);
-  // Sayfa numarasını URL'den alın
-  const [pageId, setpageId] = useState(1);
 
-  // URL'yi değiştirmek için navigate hook'unu kullanın
+  const [pageId, setpageId] = useState(1);
 
   const [viewToggle, setViewToggle] = useState(true);
 
@@ -24,26 +22,29 @@ function Populer() {
   const { setBestMovie } = useBestMovie();
 
   window.addEventListener("scroll", function () {
-    const scrollY = window.scrollY; // Y eksenindeki kaydırma miktarını alın
+    const scrollY = window.scrollY;
     setScrollState(scrollY);
   });
   const [movieGenres, setMovieGenres] = useState();
 
-  // Verileri almak için ayrı bir hook kullanın
   useEffect(() => {
-    let isMounted = true; // Componentin bağlı olup olmadığını kontrol etmek için
+    let isMounted = true;
     const getMovies = async function (pageId) {
       try {
-        // Popüler filmleri alın
         const moviesResponse = await MovieServices.getPopulerMovies(pageId);
-        // Film türlerini alın
+
         const genresResponse = await MovieServices.getMovieGenres();
-        // Component hala bağlıysa, durumları güncelleyin
+
         if (isMounted) {
-          setPopulerMovies((prevMovies) => [
-            ...prevMovies,
-            ...moviesResponse?.data?.results,
-          ]);
+          const uniqueMovieIds = new Set(
+            populerMovies.map((movie) => movie.id),
+          );
+
+          const newMovies = moviesResponse?.data?.results.filter(
+            (movie) => !uniqueMovieIds.has(movie.id),
+          );
+
+          setPopulerMovies((prevMovies) => [...prevMovies, ...newMovies]);
           setMovieGenres(genresResponse?.data?.genres);
         }
       } catch (err) {
@@ -53,13 +54,12 @@ function Populer() {
 
     getMovies(pageId);
     return () => {
-      isMounted = false; // Componentin bağlı olmadığını belirtmek için
+      isMounted = false;
     };
   }, [pageId]);
 
   useEffect(() => {
     if (scrollState + 1 + windowHeight >= documentHeight) {
-      // Sayfa numarasını artırın ve URL'yi güncelleyin
       setTimeout(() => {
         setpageId((prevPageId) => prevPageId + 1);
 
