@@ -164,7 +164,7 @@ function HeroSection() {
               <p>Yayın Tarihi: {movieDetail.release_date}</p>
               <p className="">{movieDetail.tagline}</p>
 
-              <h3 className="text-lg font-bold">Özet</h3>
+              <h3 className="text-lg font-bold">Konu</h3>
 
               <p className="text-sm">
                 {movieDetail.overview

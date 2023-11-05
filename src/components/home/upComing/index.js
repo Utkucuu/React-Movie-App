@@ -35,7 +35,7 @@ function MovieUpComing() {
   }
 
   return (
-    <div className="mx-auto mb-10 mt-10 h-auto rounded-xl bg-sky-100 bg-opacity-50 px-2 pb-2 shadow-2xl  shadow-sky-700 duration-500 dark:bg-opacity-100">
+    <section className="mx-auto mb-10 mt-10 h-auto rounded-xl bg-sky-100 bg-opacity-50 px-2 pb-2 shadow-2xl  shadow-sky-700 duration-500 dark:bg-opacity-100">
       <div className="flex items-center justify-between ">
         <div className="ms-4 flex items-center justify-center ">
           {/* ********** Content Title  ********** */}
@@ -102,7 +102,7 @@ function MovieUpComing() {
             ))}
         </Swiper>
       </div>
-    </div>
+    </section>
   );
 }
 export default MovieUpComing;
