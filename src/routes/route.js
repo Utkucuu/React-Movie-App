@@ -10,6 +10,7 @@ import Populer from "../pages/movies/Populer";
 import Profile from "../pages/Profile";
 import Authentication from "../pages/auth/Authentication";
 import { PrivateProfile, PrivateAuth } from "../components/privateRoute";
+import Page404 from "../pages/Page404";
 
 const routes = [
   {
@@ -89,6 +90,10 @@ const routes = [
         ),
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Page404 />,
   },
 ];
 

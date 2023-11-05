@@ -46,7 +46,7 @@ function MovieUpComing() {
         </div>
         {/* ********* All view link *********  */}
         <div className="me-4 text-xs underline-offset-2 hover:underline md:text-sm">
-          <Link to="movies/top_rated">Tümü</Link>
+          <Link to="movies/upcoming">Tümü</Link>
         </div>
       </div>
       <div className=" mx-auto flex touch-auto items-center overflow-x-auto rounded-xl bg-opacity-30 bg-gradient-to-b from-cyan-400 to-sky-950  dark:from-slate-950 dark:to-sky-900 ">
