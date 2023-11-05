@@ -7,15 +7,8 @@ import stylesDetail from "./stylesDetail.module.css";
 function DetailView({ allMovies, genres }) {
   const handleMovieClick = useHandleMovieClick();
 
-  // const isTabletOrMobile = useMediaQuery({ minWidth: 0, maxWidth: 768 });
-
-  // let col = 2;
-  // if (isTabletOrMobile) {
-  //   col = 1;
-
-  // }
   return (
-    <div className={`${stylesDetail.itemClass}`}>
+    <section className={`${stylesDetail.itemClass}`}>
       <VGrid
         className=""
         style={{
@@ -34,7 +27,7 @@ function DetailView({ allMovies, genres }) {
             }}
           >
             {allMovies[rowIndex * 2 + colIndex] && (
-              <div
+              <article
                 className="grid h-full w-100 cursor-pointer grid-cols-6 rounded-lg border-2 border-slate-100 p-2 dark:border-cyan-200"
                 onClick={() =>
                   handleMovieClick(
@@ -43,7 +36,7 @@ function DetailView({ allMovies, genres }) {
                   )
                 }
               >
-                <div className="col-span-2 mx-auto">
+                <figure className="col-span-2 mx-auto">
                   <img
                     src={
                       process.env.REACT_APP_API_IMG_2 +
@@ -53,10 +46,10 @@ function DetailView({ allMovies, genres }) {
                     className="w-28 overflow-hidden rounded-lg"
                     loading="lazy"
                   />
-                </div>
+                </figure>
 
                 {/* *********************** */}
-                <div className="col-span-4 pr-4">
+                <figcaption className="col-span-4 pr-4">
                   <div className="my-auto pb-1">
                     <h2 className=" mt-3 line-clamp-1 text-xl font-bold text-sky-900  dark:text-cyan-500">
                       {allMovies[rowIndex * 2 + colIndex].title}
@@ -96,6 +89,7 @@ function DetailView({ allMovies, genres }) {
                     </ul>
                     {/* /***************** */}
                   </div>
+
                   <div className="my-auto border-t-2 border-slate-100 pt-2 dark:border-cyan-200">
                     {(allMovies[rowIndex * 2 + colIndex].overview && (
                       <p className="line-clamp-4 text-sm text-gray-600 dark:text-cyan-600">
@@ -109,13 +103,13 @@ function DetailView({ allMovies, genres }) {
                       </p>
                     )}
                   </div>
-                </div>
-              </div>
+                </figcaption>
+              </article>
             )}
           </div>
         )}
       </VGrid>
-    </div>
+    </section>
   );
 }
 

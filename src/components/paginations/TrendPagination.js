@@ -10,7 +10,7 @@ function TrendPagination({ totalPages, currentPage, onPageChange }) {
   };
 
   return (
-    <div className="mx-auto flex items-center space-x-4">
+    <nav className="mx-auto flex items-center space-x-4">
       <button
         className="rounded-lg border-2 border-cyan-500 bg-gradient-to-l from-cyan-400 to-sky-900 p-1 dark:from-slate-950 dark:to-sky-900"
         onClick={() => {
@@ -32,7 +32,7 @@ function TrendPagination({ totalPages, currentPage, onPageChange }) {
       >
         <NextIcon />
       </button>
-    </div>
+    </nav>
   );
 }
 

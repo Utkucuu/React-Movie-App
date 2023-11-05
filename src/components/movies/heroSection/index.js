@@ -23,7 +23,7 @@ function MoviesHeroSection() {
   const movies = populerMovies || [];
 
   return (
-    <div className="mx-auto mt-5 px-2 xs:w-full lg:mt-10 xl:px-0 ">
+    <section className="mx-auto mt-5 px-2 xs:w-full lg:mt-10 xl:px-0 ">
       <Carousel
         showArrows={false}
         showStatus={false}
@@ -61,7 +61,7 @@ function MoviesHeroSection() {
             </div>
           ))}
       </Carousel>
-    </div>
+    </section>
   );
 }
 

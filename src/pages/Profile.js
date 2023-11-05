@@ -58,7 +58,7 @@ function Profile() {
   };
 
   return (
-    <div className="dark:to-dark mx-auto mt-10 rounded-lg bg-gradient-to-b from-cyan-400 to-sky-900 pb-20 dark:from-black">
+    <main className="dark:to-dark mx-auto mt-10 rounded-lg bg-gradient-to-b from-cyan-400 to-sky-900 pb-20 dark:from-black">
       <div className="flex flex-col text-white dark:text-sky-300">
         <div className="border-sky-white mx-auto mt-10 w-fit flex-col space-x-2 divide-y-2 rounded-lg border-4 p-2 text-center dark:border-sky-100">
           <div className=" flex flex-col items-center">
@@ -76,7 +76,7 @@ function Profile() {
           <h3 className="mt-4 text-2xl font-bold text-white">
             Beğendiğiniz Filmler
           </h3>
-          <div className="relative overflow-hidden">
+          <section className="relative overflow-hidden">
             <div className="flex h-[420px] space-x-6 overflow-x-auto">
               {userState?.userLikedMovies.reverse().map((e) => (
                 <div
@@ -118,12 +118,12 @@ function Profile() {
                 } `}
               ></div>
             </div>
-          </div>
+          </section>
           {/* /**************************************** */}
           <h3 className="mt-10 text-2xl font-bold text-white">
             Daha Sonra İzle
           </h3>
-          <div className="relative overflow-hidden">
+          <section className="relative overflow-hidden">
             <div className="flex h-[420px] space-x-6 overflow-x-auto">
               {userState?.userSavedMovies.reverse().map((e) => (
                 <div
@@ -165,10 +165,10 @@ function Profile() {
                 } `}
               ></div>
             </div>
-          </div>
+          </section>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       <HomeHeroSection />
-      <div className="mx-auto mt-10  flex justify-center px-4 lg:hidden">
+      <div className="mx-auto mt-10 flex justify-center px-4 lg:hidden">
         <SearchBar />
       </div>
       <Populer />

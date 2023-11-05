@@ -10,11 +10,11 @@ function MainTitleArea({
   toggle,
 }) {
   return (
-    <div className="flex items-center justify-between space-x-4 pb-2 text-center text-lg font-bold text-sky-900">
+    <main className="flex items-center justify-between space-x-4 pb-2 text-center text-lg font-bold text-sky-900">
       <div className="">
-        <h1 className="text-lg dark:text-cyan-400 sm:text-lg md:text-2xl">
+        <h2 className="text-lg dark:text-cyan-400 sm:text-lg md:text-2xl">
           {title}
-        </h1>
+        </h2>
       </div>
 
       {showMoviesDaily && showMoviesWeekly ? (
@@ -71,7 +71,7 @@ function MainTitleArea({
           </button>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -17,9 +17,9 @@ function LeadActors() {
   // Diğer oyuncular
 
   return (
-    <div className="px-4">
+    <section className="px-4">
       <SwiperItem actors={leadingActors} title={"Başrol"} />
-    </div>
+    </section>
   );
 }
 

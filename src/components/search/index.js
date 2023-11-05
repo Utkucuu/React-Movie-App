@@ -90,24 +90,24 @@ function SearchBar() {
       >
         {filtered.length > 0 ? (
           filtered.map((movie) => (
-            <div
+            <section
               className="mx-auto w-full border border-cyan-200 p-2 shadow hover:cursor-pointer hover:bg-cyan-50"
               onClick={() => {
                 handleMovieClick(movie.id, movie.title);
                 setFilterText(" ");
               }}
             >
-              <div className="flex animate-pulse space-x-4">
-                <div className="h-12 w-12 rounded-full bg-cyan-100 ring-1 ">
+              <article className="flex animate-pulse space-x-4">
+                <figure className="h-12 w-12 rounded-full bg-cyan-100 ring-1 ">
                   <img
                     className="h-full w-full rounded-full object-cover p-[2px]"
                     src={process.env.REACT_APP_API_IMG_2 + movie.poster_path}
                     loading="lazy"
                     alt={movie.title}
                   />
-                </div>
+                </figure>
 
-                <div className="flex-1 text-sky-900 dark:text-sky-200">
+                <figcaption className="flex-1 text-sky-900 dark:text-sky-200">
                   <div className="line-clamp-1 text-start text-xs font-bold">
                     {movie.title}
                   </div>
@@ -121,9 +121,9 @@ function SearchBar() {
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
+                </figcaption>
+              </article>
+            </section>
           ))
         ) : (
           <div className="p-2 text-xs font-bold text-sky-900">

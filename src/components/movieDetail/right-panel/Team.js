@@ -39,7 +39,7 @@ function Team() {
   return (
     <>
       {/* credits right panel */}
-      <div className="flex-col">
+      <section className="flex-col">
         <h3 className="ms-5 pb-4 text-lg font-bold text-sky-900 shadow-2xl dark:text-white sm:text-xl">
           Team
         </h3>
@@ -97,7 +97,7 @@ function Team() {
               </div>
             ))}
         </div>
-      </div>
+      </section>
     </>
   );
 }

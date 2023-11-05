@@ -110,7 +110,7 @@ function Populer() {
   }
 
   return (
-    <div className="mt-10">
+    <section className="mt-10">
       <div className="flex items-center justify-between border-b-2 border-sky-400 px-2 dark:text-sky-200">
         <h2 className="whitespace-nowrap text-sm font-bold sm:text-lg">
           Popüler Filmler
@@ -131,7 +131,7 @@ function Populer() {
             key={row}
           >
             {movies.slice(row * 3, row * 3 + 3).map((movie, index) => (
-              <div
+              <figure
                 className={`${populer.rotation1} border-opacity-50" cursor-pointer overflow-hidden rounded-full border-2 border-sky-200`}
                 onClick={() => handleMovieClick(movie.id, movie.title)}
                 id={"my-div"}
@@ -144,12 +144,12 @@ function Populer() {
                   alt={movie.title}
                   loading="lazy"
                 />
-              </div>
+              </figure>
             ))}
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -4,13 +4,13 @@ import Keywords from "./Keywords";
 
 function RightPanel() {
   return (
-    <div className="">
+    <aside className="">
       <Team />
 
       <LineChart />
 
       <Keywords />
-    </div>
+    </aside>
   );
 }
 

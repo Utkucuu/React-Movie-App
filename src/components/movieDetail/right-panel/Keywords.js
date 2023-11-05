@@ -17,7 +17,7 @@ function Keywords() {
     );
   }
   return (
-    <>
+    <section>
       <div className="ms-3 mt-10 flex flex-wrap gap-4">
         {keywords &&
           keywords.map((e, i) => (
@@ -30,7 +30,7 @@ function Keywords() {
             </div>
           ))}
       </div>
-    </>
+    </section>
   );
 }
 

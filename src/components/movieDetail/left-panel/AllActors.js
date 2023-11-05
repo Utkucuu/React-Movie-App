@@ -10,9 +10,9 @@ function AllActors() {
   const allActors = movieCredits?.cast?.filter((e) => e.popularity < 10);
 
   return (
-    <div className="mt-5 p-4">
+    <section className="mt-5 p-4">
       <SwiperItem actors={allActors} title="Diğer Oyuncular" />
-    </div>
+    </section>
   );
 }
 

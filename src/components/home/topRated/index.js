@@ -41,7 +41,7 @@ function TopRatedMovies() {
   }
 
   return (
-    <div className="mt-10 border-b-2 border-sky-400">
+    <section className="mt-10 border-b-2 border-sky-400">
       <div className="flex items-center justify-between border-b-2 border-sky-400 px-2 dark:text-sky-200">
         <h2 className="whitespace-nowrap text-sm font-bold sm:text-lg">
           En Çok Oy Alan Filmler
@@ -69,7 +69,7 @@ function TopRatedMovies() {
         >
           {populerMovies &&
             movies.map((movie) => (
-              <div
+              <figure
                 className="h-48 overflow-hidden rounded-xl sm:h-72 md:h-80 lg:h-100 xl:h-[540px]"
                 key={movie.id}
               >
@@ -79,7 +79,7 @@ function TopRatedMovies() {
                   alt={movie.title}
                   loading="lazy"
                 />
-                <p
+                <div
                   className="legend "
                   style={{
                     backgroundColor: "transparent",
@@ -91,12 +91,12 @@ function TopRatedMovies() {
                   >
                     {movie.title}
                   </button>
-                </p>
-              </div>
+                </div>
+              </figure>
             ))}
         </Carousel>
       </div>
-    </div>
+    </section>
   );
 }
 

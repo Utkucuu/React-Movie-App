@@ -44,9 +44,9 @@ const LineChart = () => {
     );
   }
   return (
-    <div className="mt-10">
+    <section className="mt-10">
       <Line data={data} />
-    </div>
+    </section>
   );
 };
 

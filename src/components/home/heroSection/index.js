@@ -128,7 +128,7 @@ function HomeHeroSection() {
   // );
 
   return (
-    <div className="group mx-auto mt-5 rounded-xl bg-sky-100 bg-opacity-50 p-2 shadow-2xl shadow-sky-700 duration-500 dark:bg-opacity-100 lg:mt-10  ">
+    <section className="group mx-auto mt-5 rounded-xl bg-sky-100 bg-opacity-50 p-2 shadow-2xl shadow-sky-700 duration-500 dark:bg-opacity-100 lg:mt-10  ">
       <div
         className={`relative z-10 flex h-36 items-center justify-center rounded-xl bg-opacity-30 bg-gradient-to-b from-cyan-400 to-sky-950 duration-500 dark:from-slate-950 dark:to-sky-900 xs:h-48 sm:h-52  md:h-64 lg:h-96 `}
         onMouseEnter={() => setAnimationPaused(true)} // Fare bu alana girdiğinde animasyonu durdur
@@ -136,7 +136,7 @@ function HomeHeroSection() {
       >
         {trailerLinks &&
           animationStyle.map((style, index) => (
-            <div
+            <figure
               className={`flex items-center justify-center overflow-hidden rounded-xl duration-500 group-hover:blur-sm ${heroHome.trailersResponsive} `}
               key={index}
               style={style}
@@ -153,10 +153,10 @@ function HomeHeroSection() {
                   },
                 }}
               />
-            </div>
+            </figure>
           ))}
       </div>
-    </div>
+    </section>
   );
 }
 

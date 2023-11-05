@@ -49,7 +49,7 @@ function Posters() {
   }, [isModal]);
 
   return (
-    <div className="p-4">
+    <section className="p-4">
       <div className="mt-15 mx-auto mb-5 h-[280px] rounded-xl bg-sky-100 bg-opacity-5 px-2 shadow-xl shadow-sky-700  dark:bg-opacity-100 md:h-[425px]">
         <h3 className="pb-1 text-xl font-bold text-sky-900">Film Görselleri</h3>
 
@@ -107,7 +107,7 @@ function Posters() {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 

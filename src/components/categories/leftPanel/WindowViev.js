@@ -13,7 +13,7 @@ function WindowViev({ allMovies }) {
   }
 
   return (
-    <div className={`${styleWindow.itemClass}`}>
+    <section className={`${styleWindow.itemClass}`}>
       <VGrid
         style={{
           height: "1000px",
@@ -24,14 +24,14 @@ function WindowViev({ allMovies }) {
         col={col}
       >
         {({ rowIndex, colIndex }) => (
-          <div
+          <article
             className={`p-1`}
             style={{
               height: "300",
             }}
           >
             {allMovies[rowIndex * 4 + colIndex] && (
-              <div
+              <figure
                 className="group h-full w-56 cursor-pointer"
                 onClick={() =>
                   handleMovieClick(
@@ -50,12 +50,12 @@ function WindowViev({ allMovies }) {
                   alt={allMovies[rowIndex * 4 + colIndex].title}
                   loading="lazy"
                 />
-              </div>
+              </figure>
             )}
-          </div>
+          </article>
         )}
       </VGrid>
-    </div>
+    </section>
   );
 }
 

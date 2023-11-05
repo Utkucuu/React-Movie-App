@@ -59,7 +59,7 @@ function CategoriesHeroSection() {
     //   </div>
     // </div>
 
-    <div className="mx-auto mt-5 h-auto overflow-hidden rounded-xl bg-gradient-to-b  from-sky-400 to-sky-900 shadow-2xl shadow-sky-700 duration-500 lg:mt-10 ">
+    <section className="mx-auto mt-5 h-auto overflow-hidden rounded-xl bg-gradient-to-b  from-sky-400 to-sky-900 shadow-2xl shadow-sky-700 duration-500 lg:mt-10 ">
       <div
         className="mx-auto flex h-auto touch-auto items-center justify-around rounded-xl "
         style={{
@@ -96,7 +96,7 @@ function CategoriesHeroSection() {
           <CubeItem textTures={textTure3} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 // Categories.js içinde bulunan useEffectin for döngüsü çalıştığında memo sayesinde bu component tekrar tekrar render olmuyor.

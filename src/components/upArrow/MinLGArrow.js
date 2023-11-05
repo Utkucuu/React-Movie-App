@@ -7,7 +7,7 @@ import HomeIcon from "../../assest/icons/HomeIcon";
 function MinLGArrow() {
   const navigate = useNavigate();
   return (
-    <div className="group text-sky-200">
+    <nav className="group text-sky-200">
       <button
         className="fixed bottom-10 right-6 hidden h-10 w-10 items-center justify-center rounded-full bg-gradient-to-t from-cyan-400 to-sky-900 duration-500 hover:bg-gradient-to-b group-hover:right-[72px] group-hover:mb-16 lg:flex"
         onClick={() => navigate("/")}
@@ -48,7 +48,7 @@ function MinLGArrow() {
           Kategoriler
         </span>
       </button>
-    </div>
+    </nav>
   );
 }
 

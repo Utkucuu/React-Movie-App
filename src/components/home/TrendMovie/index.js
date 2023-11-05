@@ -83,14 +83,16 @@ function TrendMovie() {
                   className={`group relative mx-1  h-40 w-28 cursor-pointer sm:h-60 sm:w-40 ${styles.movieCard}`}
                   onClick={() => handleMovieClick(m.id, m.title)}
                 >
-                  <img
-                    className=" h-full w-full object-cover duration-500 group-hover:scale-110 group-hover:opacity-40 group-hover:blur-sm "
-                    src={process.env.REACT_APP_API_IMG_2 + m.poster_path}
-                    alt={m.title}
-                    loading="lazy"
-                  />
+                  <figure>
+                    <img
+                      className=" h-full w-full object-cover duration-500 group-hover:scale-110 group-hover:opacity-40 group-hover:blur-sm "
+                      src={process.env.REACT_APP_API_IMG_2 + m.poster_path}
+                      alt={m.title}
+                      loading="lazy"
+                    />
+                  </figure>
 
-                  <div className=" absolute top-10 hidden text-sky-100 opacity-0 duration-500 group-hover:-top-2 group-hover:opacity-100 lg:block">
+                  <figcaption className=" absolute top-10 hidden text-sky-100 opacity-0 duration-500 group-hover:-top-2 group-hover:opacity-100 lg:block">
                     <div
                       className="float-right"
                       role="progressbar"
@@ -121,7 +123,7 @@ function TrendMovie() {
                           : m.overview}
                       </p>
                     </div>
-                  </div>
+                  </figcaption>
                 </div>
 
                 <div className="text-center">

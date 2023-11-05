@@ -13,23 +13,6 @@ function MobileMenu() {
     setToggle(false);
   }
 
-  // const [windowWidth, setwindowWidth] = useState(window.innerWidth);
-
-  // const handleResize = () => {
-  //   setwindowWidth(window.innerWidth);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", handleResize);
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
-
-  // if (windowWidth >= 1024 && toggle === true) {
-  //   setToggle(false);
-  // }
-
   const handleLogout = () => {
     // Kullanıcı çıkış yaparken "local storage" üzerinden "users" dizisini al
     const users = JSON.parse(localStorage.getItem("users")) || [];

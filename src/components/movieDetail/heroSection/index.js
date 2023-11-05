@@ -76,7 +76,7 @@ function HeroSection() {
   return (
     <>
       {" "}
-      <div
+      <main
         className=" text-md mx-auto mt-0 flex min-h-[fit] w-full rounded-t-none bg-center py-10 text-sm text-white duration-500 lg:mt-10 lg:rounded-xl"
         style={containerStyle}
       >
@@ -125,22 +125,22 @@ function HeroSection() {
             {/* ****************** TRAİLER ***************** */}
 
             {/* ****************** POSTER ***************** */}
-            <div className=" hidden w-72 flex-none lg:block">
+            <figure className=" hidden w-72 flex-none lg:block">
               <img
                 className="h-full w-full rounded-xl"
                 src={`${process.env.REACT_APP_API_IMG_5}${movieDetail.poster_path}`}
                 alt="poster"
                 loading="lazy"
               />
-            </div>
+            </figure>
             {/* ****************** POSTER ***************** */}
 
             {/* ****************** MOVİE CONTENT ***************** */}
-            <div className="flex-col space-y-2 ">
+            <article className="flex-col space-y-2 ">
               <div>
-                <h1 className="text-3xl font-bold lg:text-5xl">
+                <hz className="text-3xl font-bold lg:text-5xl">
                   {movieDetail.title}
-                </h1>
+                </hz>
               </div>
               <div className="flex space-x-4">
                 <p>{convertTime(movieDetail.runtime)}</p>
@@ -169,7 +169,7 @@ function HeroSection() {
               <p className="text-sm">
                 {movieDetail.overview
                   ? movieDetail.overview
-                  : "Türkçe'ye çevrilmiş bir özet henüz bulunmuyor."}
+                  : "İçerik eklenmedi."}
               </p>
 
               {/* ************************* Icons and percent bar flex   ****************** */}
@@ -221,11 +221,11 @@ function HeroSection() {
                   {/* ***************** PLAY ICON END ***************** */}
                 </div>
               </div>
-            </div>
+            </article>
             {/* ****************** MOVİE CONTENT ***************** */}
           </div>
         )}
-      </div>
+      </main>
     </>
   );
 }

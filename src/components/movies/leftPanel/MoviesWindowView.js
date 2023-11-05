@@ -4,11 +4,10 @@ function MoviesWindowView({ movies }) {
   const handleMovieClick = useHandleMovieClick();
 
   return (
-    // <div className="mt-4 grid grid-cols-1 gap-x-5 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-    <div className="mt-4 grid grid-cols-3 gap-x-5 gap-y-10 md:grid-cols-4 lg:grid-cols-5">
+    <section className="mt-4 grid grid-cols-3 gap-x-5 gap-y-10 md:grid-cols-4 lg:grid-cols-5">
       {movies &&
         movies?.map((movie, i) => (
-          <div
+          <article
             key={i}
             className={`group relative cursor-pointer`}
             onClick={() => handleMovieClick(movie.id, movie.title)}
@@ -59,9 +58,9 @@ function MoviesWindowView({ movies }) {
                 {movie.title}
               </h3>
             </div>{" "}
-          </div>
+          </article>
         ))}
-    </div>
+    </section>
   );
 }
 
