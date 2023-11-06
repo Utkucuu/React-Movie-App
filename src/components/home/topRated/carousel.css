@@ -15,13 +15,13 @@
 }
 
 .carousel .thumb:focus {
-  /* border: 3px solid rgb(6, 83, 122) !important; */
   outline: none;
+  border: rgb(6, 83, 122) !important;
 }
 
 .carousel .thumb.selected,
 .carousel .thumb:hover {
-  filter: blur(0px);
+  /* filter: blur(0px); */
   border: rgb(6, 83, 122) !important;
 }
 
