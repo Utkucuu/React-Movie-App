@@ -12,6 +12,7 @@ import MainTitleArea from "../components/movies/leftPanel/MainTitleArea";
 import DetailView from "../components/categories/leftPanel/DetailView";
 import SearchBar from "../components/search";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 function Categories() {
   const { selectedOption } = useOption();
   const { setBestMovie } = useBestMovie();
@@ -159,6 +160,11 @@ function Categories() {
 
   return (
     <>
+      <Helmet>
+        {" "}
+        <title>Kategoriler</title>
+      </Helmet>
+
       <div className="px-2  xl:px-0">
         <CategoriesHeroSection />
       </div>

@@ -7,6 +7,7 @@ import { useBestMovie } from "../../context/BestMoviesContext";
 import MainTitleArea from "../../components/movies/leftPanel/MainTitleArea";
 import MoviesWindowView from "../../components/movies/leftPanel/MoviesWindowView";
 import MoviesDetailView from "../../components/movies/leftPanel/MoviesDetailView";
+import { Helmet } from "react-helmet";
 
 function Upcoming() {
   const state = useMovie();
@@ -43,6 +44,10 @@ function Upcoming() {
 
   return (
     <>
+      <Helmet>
+        {" "}
+        <title>Yakında </title>
+      </Helmet>
       <div className="border-b-2 dark:border-cyan-200">
         <MainTitleArea
           title={"Yakında"}

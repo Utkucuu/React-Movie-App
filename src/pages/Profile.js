@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useUser } from "../context/AuthContext";
 import { useHandleMovieClick } from "../utils/navigateDetail";
 import ProfileIcon from "../assest/icons/ProfileIcon";
+import { Helmet } from "react-helmet";
 function Profile() {
   const { user } = useUser();
   const [userState, setUserState] = useState(null); // Başlangıçta null olarak ayarlayın
@@ -59,6 +60,10 @@ function Profile() {
 
   return (
     <main className="dark:to-dark mx-auto mt-10 rounded-lg bg-gradient-to-b from-cyan-400 to-sky-900 pb-20 dark:from-black">
+      <Helmet>
+        {" "}
+        <title>Profil</title>
+      </Helmet>
       <div className="flex flex-col text-white dark:text-sky-300">
         <div className="border-sky-white mx-auto mt-10 w-fit flex-col space-x-2 divide-y-2 rounded-lg border-4 p-2 text-center dark:border-sky-100">
           <div className=" flex flex-col items-center">

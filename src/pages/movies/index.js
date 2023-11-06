@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
+
 import PageNav from "../../components/movies/leftPanel/PageNav";
 import "../../App.css";
 import SortingTool from "../../components/movies/rightPanel/SortingTool";
 import MoviesHeroSection from "../../components/movies/heroSection/index";
 import BestMovies from "../../components/movies/rightPanel/BestMovies";
 import SearchBar from "../../components/search";
-function MoviesLayout() {
-  /* MoviesLayout componentini de outlet hale getirdim ve index true dediğim için AllMovies.js bu filmler e tıklandığında bu component ile birilkte render olacak.*/
 
+function MoviesLayout() {
   return (
     // movie container
     <div className="mx-auto">

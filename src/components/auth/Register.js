@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import EyeIcon from "../../assest/icons/EyeIcon";
 import EyeSlashIcon from "../../assest/icons/EyeSlashIcon";
 import { generateUUID } from "three/src/math/MathUtils";
+import { Helmet } from "react-helmet";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -118,6 +119,9 @@ function Register() {
 
   return (
     <div className="mx-auto px-2 sm:px-0">
+      <Helmet>
+        <title>Kayıt</title>
+      </Helmet>
       <form>
         <div className="mt-5 flex">
           <div className="flex flex-col">

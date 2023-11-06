@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/AuthContext";
+import { Helmet } from "react-helmet";
 function Login() {
   const navigate = useNavigate();
 
@@ -50,6 +51,9 @@ function Login() {
 
   return (
     <div className="mx-auto">
+      <Helmet>
+        <title>Giriş</title>
+      </Helmet>
       <form>
         <div className="mt-5 flex">
           <div className="flex flex-col">

@@ -1,21 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 function Page404() {
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <p>
+    <>
+      <Helmet>
         {" "}
-        Aranan sayfa bulunamadı. Anasayfaya dönmek için
-        <span>
+        <title>Page404</title>
+      </Helmet>
+      <div className="flex min-h-screen items-center justify-center">
+        <p>
           {" "}
-          <Link className="font-bold text-sky-900 underline" to="">
+          Aranan sayfa bulunamadı. Anasayfaya dönmek için
+          <span>
             {" "}
-            tıklayınız
-          </Link>
-        </span>
-      </p>
-    </div>
+            <Link className="font-bold text-sky-900 underline" to="">
+              {" "}
+              tıklayınız
+            </Link>
+          </span>
+        </p>
+      </div>
+    </>
   );
 }
 

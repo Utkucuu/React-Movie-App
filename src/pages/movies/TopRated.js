@@ -5,6 +5,7 @@ import { useOption } from "../../context/SelectContext";
 import MainTitleArea from "../../components/movies/leftPanel/MainTitleArea";
 import MoviesWindowView from "../../components/movies/leftPanel/MoviesWindowView";
 import MoviesDetailView from "../../components/movies/leftPanel/MoviesDetailView";
+import { Helmet } from "react-helmet";
 
 function TopRated() {
   const [pageId, setPageId] = useState(1);
@@ -68,6 +69,10 @@ function TopRated() {
 
   return (
     <>
+      <Helmet>
+        {" "}
+        <title>En Çok Oy Alan Filmler</title>
+      </Helmet>
       <div className="border-b-2 dark:border-cyan-200">
         <MainTitleArea
           title={"En Çok Oylanan Filmler"}

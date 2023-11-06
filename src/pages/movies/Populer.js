@@ -6,6 +6,7 @@ import MainTitleArea from "../../components/movies/leftPanel/MainTitleArea";
 import MoviesWindowView from "../../components/movies/leftPanel/MoviesWindowView";
 import MoviesDetailView from "../../components/movies/leftPanel/MoviesDetailView";
 import LoadingAnimate from "../../components/loadingAnimate";
+import { Helmet } from "react-helmet";
 function Populer() {
   const { selectedOption } = useOption();
 
@@ -93,6 +94,10 @@ function Populer() {
 
   return (
     <>
+      <Helmet>
+        {" "}
+        <title>Popüler Filmler</title>
+      </Helmet>
       <div className="border-spacing-16 border-b-2 dark:border-cyan-200">
         {" "}
         <MainTitleArea
