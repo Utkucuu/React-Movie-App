@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# React Movie App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Özet
 
-## Available Scripts
+Bu proje TypeScript, Redux, Nextjs... şeklinde kendimi geliştirmeye devam etmeden önce öğrendiğim bilgileri uygulamak amacıyla React, TailwindCss ve CSS kullanarak TMDB API ile geliştirdiğim bir film sitesi projesidir. Projede api istekleri **Axios** kullanılarak, sayfa geçişleri ise **React Router Dom V6** ile gerçekleştirilmiştir.
 
-In the project directory, you can run:
+Öncelikle kurgulanmış olduğum Context yapısı içinde **useLocation hook** aracılığıyla url takip edilir. İlgili sayfa render olduğunda **useReducer hook** tarafından MovieServices özel kancası kullanılarak gerekli api istekleri gerçekleştirilir ve dönen veriler data içinde ilgili alt komponente provide edilir. Alt componentlerde alınan veri gerekiyorsa çeşitli filtrelerden geçirilir ve son haliyle filmler kullanıcıya gösterilir. Farklı yöntemler denemek amacıyla, bazı komponentlerde o komponent render olduğu sırada komponentin içinden yine MovieServices kullanılarak TMBD API' ye request atılır.
 
-### `npm start`
+## Kullanılan NPM Paketleri
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [react-player](https://www.npmjs.com/package/react-player)
+  `npm install react-player`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+  `npm i react-router-dom@6`
 
-### `npm test`
+- [react-responsive-carousel](https://www.npmjs.com/package/react-responsive-carousel)
+  `npm install react-responsive-carousel`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [swiper](https://www.npmjs.com/package/swiper)
+  `npm install swiper`
+- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
+  `npm install react-chartjs-2`
+- [chart.js](https://www.npmjs.com/package/chart.js)
+  `npm install chart.js`
+- [react-responsive](https://www.npmjs.com/package/react-responsive)
+  `npm install react-responsive`
+- [react-helmet](https://www.npmjs.com/package/react-helmet)
+  `npm install react-helmet`
+- [three](https://www.npmjs.com/package/three)
+  `npm install three`
+- [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber)
+  `npm install @react-three/fiber`
+- [@react-three/drei](https://www.npmjs.com/package/@react-three/drei)
+  `npm install @react-three/drei`
+- [virtua](https://www.npmjs.com/package/virtua)
+  `npm install virtua`
 
-### `npm run build`
+- [masonry](https://www.npmjs.com/package/react-responsive-masonry)
+  `npm install react-responsive-masonry`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [tailwindcss](https://tailwindcss.com/docs/guides/create-react-app)
+  `npx create-react-app`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [axios](https://www.npmjs.com/package/axios)
+  `npm install axios`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+,,,,
+react-player
+react-router-dom
+react-responsive-carousel
+swiper
+react-chartjs-2
+chart.js
+react-responsive
+react-helmet
+three
+@react-three/fiber
+@react-three/drei
+virtua
+react-responsive-masonry
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Not: Node.js ve npm'yi kurmanız gerekmektedir. Node.js'yi resmi web sitesinden indirebilir ve npm, Node.js ile birlikte yüklenir.
