@@ -47,7 +47,7 @@ const MovieProvider = ({ children }) => {
       // let populerMovies;
 
       //pathPart[1] movies e eşit değiil ise anasayfada ya da detail sayfasındayız ve detail sayfasındaysak pathPart[2] değeri bir id olacak. Bunu da detail sayfasında tıklanan film için kullanacağım.
-      //Eğer filmler sayfasındaysak pathPart[2] değeri trend, soon gibi bir değer almış olacak yani o path e göre tıklama yapıldığında istek atıp veri çekmiş olacağım.
+      //Eğer filmler sayfasındaysak pathPart[2] değeri trend, upcoming gibi bir değer almış olacak yani o path e göre tıklama yapıldığında istek atıp veri çekmiş olacağım.
       switch (pathPart[1] !== "movies" ? pathPart[1] : pathPart[2]) {
         case "":
           payload = await MovieServices.getTrendMoviesDaily();
@@ -84,7 +84,6 @@ const MovieProvider = ({ children }) => {
 
         case "upcoming":
           payload = await MovieServices.getUpComingPage(pageId);
-          // payload = await MovieServices.getUpComingPage();
 
           upComingPage = payload;
 
