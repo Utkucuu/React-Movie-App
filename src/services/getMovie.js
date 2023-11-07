@@ -22,15 +22,10 @@ export const getMoviePosters = (url, language) => get(url, language);
 
 export const getMovieKeywords = (url) => get(url);
 
-export const getPopulerMovies = (page) => get(`movie/popular`, false, page); // hatadan sonra eklendi
-// export const getPopulerMovies = (pageId) =>
-//   get(`movie/popular/?&page=${pageId}`);
+export const getPopulerMovies = (page) => get(`movie/popular`, false, page);
 
-export const getTopRated = (page) => get(`movie/top_rated`, false, page); // hatadan sonra eklendi
-// export const getTopRated = (pageId) => get(`movie/top_rated/?&page=${pageId}`);
+export const getTopRated = (page) => get(`movie/top_rated`, false, page);
 
-// export const getUpComingPage = (pageId) =>
-//   get(`movie/upcoming/?&page=${pageId}`);
 export const getUpComingPage = (page) => get(`movie/upcoming`, false, page);
 
 export const getUpComing = () => get(`movie/upcoming`);

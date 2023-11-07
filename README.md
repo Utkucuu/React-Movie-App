@@ -1,16 +1,8 @@
 # React Movie App
 
-## Özet
+#### [Canlı](https://tmdbmovieapp95.netlify.app) / [Live](https://tmdbmovieapp95.netlify.app)
 
-Bu proje TypeScript, Redux, Nextjs... şeklinde kendimi geliştirmeye devam etmeden önce öğrendiğim bilgileri uygulamak amacıyla React, TailwindCss ve CSS kullanarak TMDB API ile geliştirdiğim bir film sitesi projesidir. Projede api istekleri **Axios** kullanılarak, sayfa geçişleri ise **React Router Dom V6** ile gerçekleştirilmiştir.
-
-Öncelikle kurgulanmış olduğum Context yapısı içinde **useLocation hook** aracılığıyla url takip edilir. İlgili sayfa render olduğunda **useReducer hook** tarafından MovieServices custom hook kullanılarak gerekli api istekleri gerçekleştirilir ve dönen veriler data içinde ilgili alt komponente provide edilir. Alt componentlerde alınan veri gerekiyorsa çeşitli filtrelerden geçirilir ve son haliyle filmler kullanıcıya gösterilir. Farklı yöntemler denemek amacıyla, belirli koşullar gerçekleştiğinde bazı komponentlerin içinden de axios istekleri yapılmıştır.
-
-![Genel şema](./src/assest/image/MovieProject.jpg)
-
-#### [Live](https://tmdbmovieapp95.netlify.app)
-
-#### [TMDB API](https://developer.themoviedb.org/docs)
+[TMDB API](https://developer.themoviedb.org/docs)
 
 ## Kullanılan npm paketleri
 
@@ -58,3 +50,27 @@ Bu proje TypeScript, Redux, Nextjs... şeklinde kendimi geliştirmeye devam etme
 
 - [tailwindcss](https://tailwindcss.com/docs/guides/create-react-app)
   `npx create-react-app`
+
+### Genel yapı
+
+Bu proje TypeScript, Redux, Nextjs gibi teknolojilere adım atmadan önce öğrendiğim bilgileri uygulamak amacıyla React, TailwindCss ve CSS kullanarak TMDB API ile geliştirdiğim bir film sitesi projesidir. Projede api istekleri **Axios** kullanılarak, sayfa geçişleri ise **React Router Dom V6** ile gerçekleştirilmiştir.
+
+Öncelikle kurgulanmış olduğum Context yapısı içinde **useLocation hook** aracılığıyla url takip edilir. İlgili pathName render olduğunda **useReducer hook** tarafından MovieServices'te kullanılmış olan "named export" yöntemi sayesinde gerekli api istekleri gerçekleştirilir ve dönen veriler data içinde ilgili alt komponente provide edilir. Alt componentlerde alınan veriler gerekiyorsa çeşitli filtrelerden geçirilir ve filmler uygun şekilde kullanıcıya gösterilir. Farklı yöntemler denemek amacıyla, belirli koşullar gerçekleştiğinde bazı komponentlerin içinden de axios istekleri yapılmıştır.
+
+<!-- ![Genel şema](./src/assest/image/MovieProject.jpg) -->
+
+<div style="text-align: center;">
+  <img src="./src/assest/image/MovieProject.jpg" width="400" style="display: inline-block;" />
+</div>
+
+### Kullanıcı işlemleri
+
+Kullanıcıların bir filmi beğenip kaydedebilmeleri için kayıt olup giriş yapmaları gerekmektedir. Oturum açılmadan page>_Profile.js_ sayfasına, oturum açıldıktan sonra page>_Authentication.js_ sayfasına ulaşılamaması için bu komponentler **privateRoute** olarak tasarlanmışlardır. Kullanıcı işlemleri ve oturum kontrolleri **LocalStorage** yardımıyla yönetilir. Kullanıcıların beğenip kaydettikleri filmleri profillerinde görüntüleyip daha sonra isterlerse profillerindeki ilgili bölümden kaldırabilmeleri mümkündür.
+
+Register.js componenti içinde form kontrolleri **Regex** ile sağlanmıştır. Eğer kayıt başarılıysa kullanıcıya **generateUUID** fonksiyonu yardımıyla benzersiz bir id tanımlanır. Projenin sonraki aşamalarına devam edilirse bu id üzerinden kullanıcı işlemleri gerçekleştirilebilir.
+
+<!-- ![Genel şema](./src/assest/image/Profile.jpg) -->
+
+<div style="text-align: center;">
+  <img src="./src/assest/image/Profile.jpg" width="400" style="display: inline-block;" />
+</div>
