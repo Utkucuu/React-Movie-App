@@ -10,11 +10,6 @@
 
 - [tailwindcss](https://tailwindcss.com)
 
-<video width="320" height="240" controls>
-  <source src="./src/assest/video/project-video1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
 ### Özet
 
 Bu proje React, TailwindCss ve CSS kullanarak TMDB API ile geliştirdiğim bir film sitesi projesidir. Projede api istekleri **Axios** kullanılarak, sayfa geçişleri ise **React Router Dom V6** ile gerçekleştirilmiştir.
@@ -90,7 +85,7 @@ Film verilerini alt komponentlere dağıtmak için oluşturulmuştur.
 #### Ek Bilgi
 
 - Projede Eslint uyarıları görülebilir.
-- Categories.js koponentindeni bir hata App.css içerisinde manipüle edilmiştir.
+- Categories.js koponentindeki bir hata App.css içerisinde manipüle edilmiştir.
 - Bazı komponentler css "zoom" attribute ile responsive uyumlu hale getirilmiştir.
 - components>movieDetail>right-panel>LineChart.js komponenti temsilidir.
 - Kod blokları içerisinde açıklayıcı yorum satırlarına yer verilmiştir.
