@@ -5,7 +5,7 @@
 - [TMDB API](https://developer.themoviedb.org/docs)
 
 - [en](#en)
-
+- [en](#Sumarry)
 - [npm](#npm)
 
 ### Özet
@@ -67,17 +67,29 @@ Film verilerini alt komponentlere dağıtmak için oluşturulmuştur.
 
 #### DarkMode
 
-[tailwindcss](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
+[tailwind Dark Mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
+
+#### Palet
+
+| color | [tailwindColor](https://tailwindcss.com/docs/background-color) |
+| ----- | -------------------------------------------------------------- |
+| cyan  | 100-950                                                        |
+| sky   | 100-950                                                        |
+| slate | 100-950                                                        |
+| black | #                                                              |
+| white | #                                                              |
 
 ###### Ek Bilgi
 
 - Projede Eslint uyarıları görülebilir.
 - Categories.js koponentindeni bir hata App.css içerisinde manipüle edilmiştir.
 - Bazı komponentler css "zoom" attribute ile responsive uyumlu hale getirilmiştir.
+- components>movieDetail>right-panel>LineChart.js komponenti temsilidir.
+- Kod blokları içerisinde açıklayıcı yorum satırlarına yer verilmiştir.
 
 <hr>
 
-#### Summary{#en}
+#### Summary {#en}
 
 This project is a movie website project that I developed with TMDB API using React, TailwindCss and CSS. In the project, api requests were made using **Axios** and page transitions were realized with **React Router Dom V6**.
 
@@ -137,13 +149,25 @@ Created to distribute movie data to subcomponents.
 
 #### DarkMode
 
-[tailwindcss](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
+[tailwind Dark Mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
+
+#### Palette
+
+| color | [tailwindColor](https://tailwindcss.com/docs/background-color) |
+| ----- | -------------------------------------------------------------- |
+| cyan  | 100-950                                                        |
+| sky   | 100-950                                                        |
+| slate | 100-950                                                        |
+| black | #                                                              |
+| white | #                                                              |
 
 ###### Additional Information
 
 - Eslint warnings can be seen in the project.
 - An error in Categories.js coponent has been manipulated in App.css.
 - Some components have been made responsive compatible with the css "zoom" attribute.
+- components>movieDetail>right-panel>LineChart.js component is representative.
+- Explanatory comment lines were included in the code blocks.
 
 <hr>
 
