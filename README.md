@@ -4,8 +4,9 @@
 
 - [TMDB API](https://developer.themoviedb.org/docs)
 
-- [en](#Summary-en)
-- [npm](#npm-package)
+- [en](#Summary)
+
+- [npm](#npm)
 
 ### Özet
 
@@ -89,7 +90,7 @@ Film verilerini alt komponentlere dağıtmak için oluşturulmuştur.
 
 <hr>
 
-### Summary {#Summary-en}
+### Summary
 
 This project is a movie website project that I developed with TMDB API using React, TailwindCss and CSS. In the project, api requests were made using **Axios** and page transitions were realized with **React Router Dom V6**.
 
@@ -111,7 +112,7 @@ In **components>auth>_Register.js_** component, form controls are provided with 
 
 - In the <ins>**pages>movies>_Populer.js_**</ins> component, the scroll position is tracked and an API request is made to fetch the data from the next page when the end of the page is reached, but this method is not efficient because it bloats the Real DOM.
 
-- In the <ins>**pages>_Categories.js_**</ins> component, the page flow is implemented using the **virtua** package. Bu sebeple scroll aşağıya doğru kaydrıldığında Reel DOM içinde her zaman aynı sayıda element render edilir, bu yöntem sayfa akışı için daha verimlidir.
+- In the <ins>**pages>_Categories.js_**</ins> component, the page flow is implemented using the **virtua** package. For this reason, scrolling down the scroll always renders the same number of elements in the Real DOM, which is more efficient for page flow.
 
 ### utils
 
@@ -171,7 +172,7 @@ Created to distribute movie data to subcomponents.
 
 <hr>
 
-### npm {#npm-package}
+### npm
 
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 
