@@ -7,10 +7,16 @@
 ## Kullanılan npm paketleri
 
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
-  `npm i react-router-dom@6`
+
+  ```
+  npm i react-router-dom@6
+  ```
 
 - [axios](https://www.npmjs.com/package/axios)
-  `npm install axios`
+
+  ```
+  npm install axios
+  ```
 
 - [react-player](https://www.npmjs.com/package/react-player)
   `npm install react-player`
@@ -67,4 +73,20 @@ Kullanıcıların bir filmi beğenip kaydedebilmeleri için kayıt olup giriş y
 
 components>auth>_Register.js_ komponenti içinde form kontrolleri **Regex** ile sağlanmıştır. Eğer kayıt başarılıysa kullanıcıya **generateUUID** fonksiyonu yardımıyla benzersiz bir id tanımlanır. Projenin sonraki aşamalarına devam edilirse bu id üzerinden kullanıcıların yönetimi gerçekleştirilebilir.
 
-### Sayfalar
+### Sayfa Akışları
+
+<ins>pages>movies>_Populer.js_</ins> komponentinde scroll konumu takip edilerek sayfa sonuna gelindiğinde bir sonraki sayfadaki verilerin getirilmesi için API isteği yapılır ancak bu yöntem Reel DOM'u şişirdiği için verimli değildir.
+
+<u>pages>_Categories.js_</u> komponentinde sayfa akışı **virtua** paketi kullanıllarak gerçekleştirilir. Bu sebeple scroll aşağıya doğru kaydrıldığında Reel DOM içinde her zaman aynı sayıda element render edilir, bu yöntem sayfa akışı için daha verimlidir.
+
+### utils
+
+<ins>utils>generatePage.js</ins> bileşeni pages>_Trend.js_ ve pages>_UpCmoing.js_ sayfalarındaki pagination' lar kullanıldığında route>routes.js dosyasında kurgulanan sayfa yapısına göre yeni sayfaların yüklenmesi için URL değişimini gerçekleştirir. context>SiteContext.js içerisinde location takip edilir ve pathname üzerinde değişiklik gerçekleştiğinde belirtilen koşula göre yeni sayfaların yüklenmesi için API istekleri gerçekleştirilir.
+
+<u>utils>navigateDetail.js</u> bileşeni herhangi bir filme tıklandığında o filmin id ve title değerlerine göre bir detay sayfası oluşturur ve yine SiteContext.js aracılığıyla pathname değişikliği algılanıp sayfanın içeriği için API istekleri gerçekleştirilir.
+
+css ile hata manipulasyonundan bahset
+npm lere copy ekle
+pagelerdeki index true olayları
+contextler ile sıralamadan bahset
+responsiveden bahset
