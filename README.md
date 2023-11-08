@@ -10,7 +10,8 @@
 
 - [tailwindcss](https://tailwindcss.com)
 
-<video src="./src/assest/video/project_video_fast.mp4" width="400" height="300" controls>
+<video width="320" height="240" controls>
+  <source src="./src/assest/video/project-video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
