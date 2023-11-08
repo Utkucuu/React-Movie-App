@@ -11,7 +11,7 @@
 - [tailwindcss](https://tailwindcss.com)
 
 <video width="320" height="240" controls>
-  <source src="./src/assest/video/project-video.mp4" type="video/mp4">
+  <source src="./src/assest/video/project-video1.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
