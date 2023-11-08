@@ -62,7 +62,9 @@ Bu proje TypeScript, Redux, Nextjs gibi teknolojilere adım atmadan önce öğre
 ### Kullanıcı işlemleri
 
 Kullanıcıların bir filmi beğenip kaydedebilmeleri için kayıt olup giriş yapmaları gerekmektedir. Oturum açılmadan pages>_Profile.js_ sayfasına, oturum açıldıktan sonra pages>_Authentication.js_ sayfasına ulaşılamaması için bu komponentler **privateRoute** olarak tasarlanmışlardır. Kullanıcı işlemleri ve oturum kontrolleri **LocalStorage** yardımıyla yönetilir. Kullanıcıların beğenip kaydettikleri filmleri profillerinde görüntüleyip daha sonra isterlerse profillerindeki ilgili bölümden kaldırabilmeleri mümkündür.
+
 <img src="./src/assest/image/Profile.jpg" width="400" style="display: inline-block;" />
+
 components>auth>_Register.js_ komponenti içinde form kontrolleri **Regex** ile sağlanmıştır. Eğer kayıt başarılıysa kullanıcıya **generateUUID** fonksiyonu yardımıyla benzersiz bir id tanımlanır. Projenin sonraki aşamalarına devam edilirse bu id üzerinden kullanıcıların yönetimi gerçekleştirilebilir.
 
 ### Sayfalar
