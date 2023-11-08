@@ -15,7 +15,7 @@ const UserProvider = ({ children }) => {
       ? JSON.parse(localStorage.getItem("activeUser"))
       : false,
   );
-  //UX tarafının kulanıcı durumuna göre değişebilmesi için kullanıcının oturum bilgilerini alarak oturumun yeniden oluşturulması sağlanır.
+  //UI tarafının kulanıcı durumuna göre değişebilmesi için kullanıcının oturum bilgilerini alarak oturumun yeniden oluşturulması sağlanır.
   useEffect(() => {
     localStorage.getItem("sessionHandle") === "true"
       ? setUser(JSON.parse(localStorage.getItem("activeUser")))
