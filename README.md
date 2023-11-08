@@ -2,11 +2,17 @@
 
 - ### [Canlı / Live](https://tmdbmovieapp95.netlify.app)
 
-- [TMDB API](https://developer.themoviedb.org/docs)
-
 - [en](#Summary)
 
 - [npm](#npm)
+
+- [TMDB API](https://developer.themoviedb.org/docs)
+
+- [tailwindcss](https://tailwindcss.com)
+
+<video src="./src/assest/video/project_video_fast.mp4" width="400" height="300" controls>
+  Your browser does not support the video tag.
+</video>
 
 ### Özet
 
