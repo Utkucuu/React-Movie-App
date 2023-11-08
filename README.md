@@ -1,12 +1,11 @@
 # React Movie App
 
-- #### [Canlı / Live](https://tmdbmovieapp95.netlify.app)
+- ### [Canlı / Live](https://tmdbmovieapp95.netlify.app)
 
 - [TMDB API](https://developer.themoviedb.org/docs)
 
-- [en](#en)
-- [en](#Sumarry)
-- [npm](#npm)
+- [en](#Summary-en)
+- [npm](#npm-package)
 
 ### Özet
 
@@ -18,7 +17,7 @@ Kurgulanan Context yapısı içinde **useLocation hook** aracılığıyla url ta
 
   <img src="./src/assest/image/MovieProject.jpg" width="400" style="display: inline-block;" />
 
-#### Kullanıcı işlemleri
+### Kullanıcı işlemleri
 
 Kullanıcıların bir filmi beğenip kaydedebilmeleri için kayıt olup giriş yapmaları gerekmektedir. Oturum açılmadan **pages>_Profile.js_** sayfasına, oturum açıldıktan sonra **pages>_Authentication.js_** sayfasına ulaşılamaması için bu komponentler **privateRoute** olarak tasarlanmışlardır. Kullanıcı işlemleri ve oturum kontrolleri **LocalStorage** yardımıyla yönetilir. Kullanıcıların beğenip kaydettikleri filmleri profillerinde görüntüleyip daha sonra isterlerse profillerindeki ilgili bölümden kaldırabilmeleri mümkündür.
 
@@ -26,13 +25,13 @@ Kullanıcıların bir filmi beğenip kaydedebilmeleri için kayıt olup giriş y
 
 **components>auth>_Register.js_** komponenti içinde form kontrolleri **Regex** ile sağlanmıştır. Eğer kayıt başarılıysa kullanıcıya **generateUUID** fonksiyonu yardımıyla benzersiz bir id tanımlanır. Projenin sonraki aşamalarına devam edilirse bu id üzerinden kullanıcıların yönetimi gerçekleştirilebilir.
 
-#### Sayfa Akışları
+### Sayfa Akışları
 
 - <ins>**pages>movies>_Populer.js_**</ins> komponentinde scroll konumu takip edilerek sayfa sonuna gelindiğinde bir sonraki sayfadaki verilerin getirilmesi için API isteği yapılır ancak bu yöntem Reel DOM'u şişirdiği için verimli değildir.
 
 - <ins>**pages>_Categories.js_**</ins> komponentinde sayfa akışı **virtua** paketi kullanıllarak gerçekleştirilir. Bu sebeple scroll aşağıya doğru kaydrıldığında Reel DOM içinde her zaman aynı sayıda element render edilir, bu yöntem sayfa akışı için daha verimlidir.
 
-#### utils
+### utils
 
 -<ins>**utils>_generatePage.js_**</ins> bileşeni **pages>movies>_Trend.js_** ve **pages>movies>_UpCmoing.js_** sayfalarındaki pagination' lar kullanıldığında route>routes.js dosyasında kurgulanan sayfa yapısına göre yeni sayfaların yüklenmesi için URL değişimini gerçekleştirir. **context>SiteContext.js** içerisinde location takip edilir ve pathname üzerinde değişiklik gerçekleştiğinde belirtilen koşula göre yeni sayfaların yüklenmesi için API istekleri gerçekleştirilir.
 
@@ -40,36 +39,37 @@ Kullanıcıların bir filmi beğenip kaydedebilmeleri için kayıt olup giriş y
 <img src="./src/assest/image/pagi2.png" width="300"  style="display: inline-block;" />
 <img src="./src/assest/image/pagi1.png" width="300"  style="display: inline-block;" />
 </div>
+<br>
 
 <ins>**utils>_navigateDetail.js_**</ins> bileşeni herhangi bir filme tıklandığında o filmin id ve title değerlerine göre **pages>_MovieDetail.js_** sayfası oluşturur ve yine **context>_SiteContext.js_** aracılığıyla pathname değişikliği algılanıp sayfanın içeriğinin yüklenebilmesi için API istekleri gerçekleştirilir.
 
-#### context
+### context
 
-- ###### AuthContext.js
+- #### AuthContext.js
 
 Kullanıcı oturum durumu bu context üzerinde izlenir. activeUser bulunuyorsa alt komponentlere user=true değeri döner ve UI değişiklikleri yapılır.
 
-- ###### BestMoviesContext.js
+- #### BestMoviesContext.js
 
 En "..." filmlerin gösterilebilmesi için
 **components>movies>rigthPanel>_BestMovies.js_** ile diğer komponentlerin (Populer.js, TopRated.js, Trend.js, upComing.js, Categories.js) iletişimini sağlar.
 
 <img src="./src/assest/image/BestMovies.jpg" width="200" style="display: inline-block;" />
 
-- ###### SelectContext.js
+- #### SelectContext.js
 
 Sıralama işlemlerinin yapılabilmesi için
 **components>movies>rigthPanel>_SortingTool.js_** ile diğer componentlerin (Populer.js, TopRated.js, Trend.js, upComing.js, Categories.js) iletişimini sağlar.
 
-- ###### SiteContext.js
+- #### SiteContext.js
 
 Film verilerini alt komponentlere dağıtmak için oluşturulmuştur.
 
-#### DarkMode
+### DarkMode
 
 [tailwind Dark Mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
 
-#### Palet
+### Palet
 
 | color | [tailwindColor](https://tailwindcss.com/docs/background-color) |
 | ----- | -------------------------------------------------------------- |
@@ -79,7 +79,7 @@ Film verilerini alt komponentlere dağıtmak için oluşturulmuştur.
 | black | #                                                              |
 | white | #                                                              |
 
-###### Ek Bilgi
+#### Ek Bilgi
 
 - Projede Eslint uyarıları görülebilir.
 - Categories.js koponentindeni bir hata App.css içerisinde manipüle edilmiştir.
@@ -89,7 +89,7 @@ Film verilerini alt komponentlere dağıtmak için oluşturulmuştur.
 
 <hr>
 
-#### Summary {#en}
+### Summary {#Summary-en}
 
 This project is a movie website project that I developed with TMDB API using React, TailwindCss and CSS. In the project, api requests were made using **Axios** and page transitions were realized with **React Router Dom V6**.
 
@@ -99,7 +99,7 @@ The url is tracked through **useLocation hook** in the constructed Context struc
 
   <img src="./src/assest/image/MovieProject.jpg" width="400" style="display: inline-block;" />
 
-#### User operations
+### User operations
 
 In order for users to like and save a movie, they need to register and log in. These components are designed as **privateRoute** so that **pages>_Profile.js_** cannot be accessed without logging in and **pages>_Authentication.js_** cannot be accessed after logging in. User actions and session controls are managed with the help of **LocalStorage**. It is possible for users to view the movies they like and save in their profile and then remove them from the relevant section of their profile if they wish.
 
@@ -107,13 +107,13 @@ In order for users to like and save a movie, they need to register and log in. T
 
 In **components>auth>_Register.js_** component, form controls are provided with **Regex**. If the registration is successful, a unique id is defined to the user with the help of the **generateUUID** function. If you continue to the next stages of the project, users can be managed through this id.
 
-#### Page Flows
+### Page Flows
 
 - In the <ins>**pages>movies>_Populer.js_**</ins> component, the scroll position is tracked and an API request is made to fetch the data from the next page when the end of the page is reached, but this method is not efficient because it bloats the Real DOM.
 
 - In the <ins>**pages>_Categories.js_**</ins> component, the page flow is implemented using the **virtua** package. Bu sebeple scroll aşağıya doğru kaydrıldığında Reel DOM içinde her zaman aynı sayıda element render edilir, bu yöntem sayfa akışı için daha verimlidir.
 
-#### utils
+### utils
 
 <ins>**utils>_generatePage.js_**</ins> component performs URL change to load new pages according to the page structure set up in route>routes.js file when pagination in **pages>movies>_Trend.js_** and **pages>movies>_UpCmoing.js_** pages are used. In **context>SiteContext.js**, location is tracked and API requests are made to load new pages according to the specified condition when the pathname changes.
 
@@ -121,37 +121,37 @@ In **components>auth>_Register.js_** component, form controls are provided with 
 <img src="./src/assest/image/pagi2.png" width="300"  style="display: inline-block;" />
 <img src="./src/assest/image/pagi1.png" width="300"  style="display: inline-block;" />
 </div>  
-  
+ <br> 
  
 <ins>**utils>_navigateDetail.js_**</ins> component creates a **pages>_MovieDetail.js_** page based on the id and title values of a movie when a movie is clicked, and again through **context>_SiteContext.js_**, the pathname change is detected and API requests are made to load the content of the page.
 
-#### context
+### context
 
-- ###### AuthContext.js
+- #### AuthContext.js
 
 User session status is monitored on this context. If activeUser is present, user=true value is returned to subcomponents and UI changes are made.
 
-- ###### BestMoviesContext.js
+- #### BestMoviesContext.js
 
 To show the most "..." movies
 Communicates **components>movies>rigthPanel>_BestMovies.js_** with other components (Popular.js, TopRated.js, Trend.js, upComing.js, Categories.js).
 
 <img src="./src/assest/image/BestMovies.jpg" width="200" style="display: inline-block;" />
 
-- ###### SelectContext.js
+- #### SelectContext.js
 
 For sorting operations to be performed
 It provides communication between **components>movies>rigthPanel>_SortingTool.js_** and other components (Populer.js, TopRated.js, Trend.js, upComing.js, Categories.js).
 
-- ###### SiteContext.js
+- #### SiteContext.js
 
 Created to distribute movie data to subcomponents.
 
-#### DarkMode
+### DarkMode
 
 [tailwind Dark Mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
 
-#### Palette
+### Palette
 
 | color | [tailwindColor](https://tailwindcss.com/docs/background-color) |
 | ----- | -------------------------------------------------------------- |
@@ -161,7 +161,7 @@ Created to distribute movie data to subcomponents.
 | black | #                                                              |
 | white | #                                                              |
 
-###### Additional Information
+#### Additional Information
 
 - Eslint warnings can be seen in the project.
 - An error in Categories.js coponent has been manipulated in App.css.
@@ -171,7 +171,7 @@ Created to distribute movie data to subcomponents.
 
 <hr>
 
-### npm {#npm}
+### npm {#npm-package}
 
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 
