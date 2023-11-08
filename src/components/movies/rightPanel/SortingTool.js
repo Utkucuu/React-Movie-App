@@ -26,7 +26,6 @@ function SortingTool() {
 
   return (
     <div className="">
-      {/* <label htmlFor="selectBox">Bir seçenek seçin:</label> */}
       <select
         className="w-40 border-2 border-slate-400 text-sm md:text-base"
         id="selectBox"
@@ -47,8 +46,6 @@ function SortingTool() {
           </option>
         ))}
       </select>
-
-      {/* {selectedOption && <p>Seçilen seçenek: {selectedOption}</p>} */}
     </div>
   );
 }

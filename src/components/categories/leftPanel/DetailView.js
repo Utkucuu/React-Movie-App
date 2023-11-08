@@ -1,7 +1,5 @@
 import { VGrid } from "virtua";
 import { useHandleMovieClick } from "../../../utils/navigateDetail";
-
-// import { useMediaQuery } from "react-responsive";
 import stylesDetail from "./stylesDetail.module.css";
 
 function DetailView({ allMovies, genres }) {

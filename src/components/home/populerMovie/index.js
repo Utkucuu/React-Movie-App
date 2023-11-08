@@ -18,11 +18,9 @@ function Populer() {
           const response = await MovieServices.getPopulerMovies(index);
           moviesData.push(response?.data.results);
         }
-
-        // Tüm promise'ların sonuçlarını bekleyin ve birleştirin
         const allMovies = moviesData.flat();
 
-        // Aynı filmi birden fazla eklemeyi önlemek için kontrol edin
+        // Aynı filmi birden fazla eklemeyi önlemek için
         const uniqueMovies = [];
         const movieIds = new Set();
 

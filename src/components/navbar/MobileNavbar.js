@@ -79,6 +79,7 @@ function MobileMenu() {
           <NavItem to="categories"> Kategoriler</NavItem>
         </div>
 
+        {/* user durumuna göre mobil navbar için link durumu aşağıdaki şekilde yönetilir. */}
         {user ? (
           <>
             <div

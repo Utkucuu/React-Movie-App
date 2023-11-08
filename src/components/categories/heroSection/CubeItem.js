@@ -9,7 +9,6 @@ export default function CubeCanvas({ textTures }) {
     <Canvas>
       <ambientLight intensity={1} />
       <Viewcube textTure={textTures} />
-      {/* OrbitControls bileşenini ekleyin */}
     </Canvas>
   );
 }
@@ -43,18 +42,12 @@ function Viewcube({
   }
 
   useFrame(() => {
-    // Spin mesh to the inverse of the default cameras matrix
     matrix.copy(camera.matrix).invert();
-    // mesh.current.quaternion.setFromRotationMatrix(matrix);
-    // Küpün y ekseninde dönmesini sağlayan satır
     mesh.current.rotation.y += Math.PI / 360; // Her karede yarım derece döner
     mesh.current.rotation.x += Math.PI / 360; // Her karede yarım derece döner
   });
-
   // TextureLoader kullanarak resimleri yükle
   const textureLoader = new TextureLoader();
-
-  // const trendDaily = state?.trendDaily?.data?.results || [];
   const textures = textTure
     ? textTure.map((imageSrc) => textureLoader.load(imageSrc))
     : [];
@@ -71,7 +64,8 @@ function Viewcube({
           />
         ))}
         <boxGeometry args={[arg, arg, arg]} />
-        <OrbitControls enableZoom={false} />
+        <OrbitControls enableZoom={false} />{" "}
+        {/* küplerin mouse ile döndürülmesini sağlar */}
       </mesh>
       <ambientLight intensity={2} />
       <pointLight position={[200, 200, 100]} intensity={0.5} />

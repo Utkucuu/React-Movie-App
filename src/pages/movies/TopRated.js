@@ -15,16 +15,12 @@ function TopRated() {
   const { setBestMovie } = useBestMovie();
   const { selectedOption } = useOption();
 
-  // Verileri almak için ayrı bir hook kullanın
   useEffect(() => {
-    let isMounted = true; // Componentin bağlı olup olmadığını kontrol etmek için
+    let isMounted = true;
     const getMovies = async function (pageId) {
       try {
-        // En çok oylanan filmleri alın
         const moviesResponse = await MovieServices.getTopRated(pageId);
-        // Film türlerini alın
         const genresResponse = await MovieServices.getMovieGenres();
-        // Component hala bağlıysa, durumları güncelleyin
         if (isMounted) {
           setTopRatedMovies((prevMovies) => [
             ...prevMovies,
@@ -38,7 +34,7 @@ function TopRated() {
     };
     getMovies(pageId);
     return () => {
-      isMounted = false; // Componentin bağlı olmadığını belirtmek için
+      isMounted = false;
     };
   }, [pageId]);
 
@@ -62,6 +58,7 @@ function TopRated() {
     setBestMovie(sortedMovies);
   }, [selectedOption, topRatedMovies]);
 
+  //butona tıklandığında bu fonksiyon çalışır ve yeni fimler eklenir.
   const handleMoreMovie = (e) => {
     e.preventDefault();
     setPageId((prevPageId) => prevPageId + 1);

@@ -15,7 +15,6 @@ function SwiperItem({ actors, title }) {
       </h3>
       <Swiper
         style={{}}
-        // install Swiper modules
         className="h-auto rounded-xl bg-gradient-to-b from-cyan-400 to-sky-900 shadow-xl shadow-sky-200  dark:from-slate-950 dark:to-sky-900 "
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={10}
@@ -61,7 +60,6 @@ function SwiperItem({ actors, title }) {
                     {a.name}
                   </p>
                   <p className=" whitespace-nowrap text-xs font-bold text-sky-100">
-                    {" "}
                     {/* regex ile #4 gibi string ekleri kaldırdım */}
                     {a.character.replace(/#.*$/, "")}
                   </p>

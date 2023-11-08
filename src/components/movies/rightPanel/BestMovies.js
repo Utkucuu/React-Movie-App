@@ -7,7 +7,6 @@ function BestMovies() {
 
   const handleMovieClick = useHandleMovieClick();
 
-  //burada hata aldın unutma getMovies çalışmadı sort hatası aldın maplediğin için dizi olmak zorunda ve bestMovie yüklenmeden veri gelirse hata alıyorsun.
   let getMovies = bestMovie || [];
 
   if (!getMovies.length) {
@@ -21,11 +20,15 @@ function BestMovies() {
     );
   }
 
+  // En yüksek puan
   let highestRated = getMovies.sort(
     (a, b) => b.vote_average - a.vote_average,
   )[0];
+  //En popüler
   let mostPopular = getMovies.sort((a, b) => b.popularity - a.popularity)[0];
+  //En çok oylanan
   let mostVoted = getMovies.sort((a, b) => b.vote_count - a.vote_count)[0];
+  //En yeni
   let newestRelease = getMovies.sort(
     (a, b) => new Date(b.release_date) - new Date(a.release_date),
   )[0];
@@ -35,9 +38,6 @@ function BestMovies() {
   return (
     <>
       <div className="flex justify-around text-center lg:flex-col lg:text-start ">
-        {/* <div className="text-xl text-center font-bold text-sky-900">
-          Bu Sayfada
-        </div> */}
         {bestMovie &&
           bestMovies?.map((movie, i) => (
             <div

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useMovie } from "../../context/SiteContext";
 import "./trend.module.css";
-
 import { useGeneratePath } from "../../utils/generatePage";
 import TrendPagination from "../../components/paginations/TrendPagination";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -10,76 +9,79 @@ import { useBestMovie } from "../../context/BestMoviesContext";
 import MainTitleArea from "../../components/movies/leftPanel/MainTitleArea";
 import MoviesWindowView from "../../components/movies/leftPanel/MoviesWindowView";
 import MoviesDetailView from "../../components/movies/leftPanel/MoviesDetailView";
-import LoadingAnimate from "../../components/loadingAnimate";
 import { Helmet } from "react-helmet";
-// import LoadingAnimate from "../../components/loadingAnimate";
+
 function Trend() {
   const { selectedOption } = useOption();
 
+  //Utils klasöründe custom hook olarak useGeneratePath tasarlanmıştır. Bu sayfaya özel pagination çalıştığında route>routes.js içinde önceden ayarlandığı şekilde bir path generate etmek için paginatePath e bir argüman gönderilir.
   const paginatePath = useGeneratePath();
 
+  //Sayfanın günlük trendleri mi yoksa haftalık trendleri mi göstereceği bu toggle üzerinden kontrol edilir.
   const savedToggle = localStorage.getItem("toggle");
 
   const { setBestMovie } = useBestMovie();
 
-  // Eğer LocalStorage'da kayıtlı bir toggle değeri yoksa, varsayılan olarak true kullanın
+  // Eğer LocalStorage'da kayıtlı bir toggle değeri yoksa, varsayılan olarak true kullanılır
   const [toggle, setToggle] = useState(
     savedToggle === null ? true : savedToggle === "true",
   );
 
   const [viewToggle, setViewToggle] = useState(true);
 
+  //Loaction SiteContext içinde kontrol edildiği için pathName "...movies/trend" olduğunda istekler otomatik olarak gerçekleştirilir ve dönen sonuçlar state içine gelir.
   const state = useMovie();
-
   const trendDaily = state.trendDaily?.data?.results || [];
-
   const trendWeekly = state.trendWeekly?.data?.results || [];
-
   const movieGenres = state.movieGenres?.data?.genres || [];
 
+  //Toggle durumuna göre gösterilecek veri belirlenir.
   let moviesToShow = toggle ? trendDaily : trendWeekly;
 
   useEffect(() => {
     setBestMovie(moviesToShow);
   }, [moviesToShow, setBestMovie]);
 
+  // Trend filmler sayfasında olduğumuz için bu sayfada veriler önceden en yüksek oy trendine göre sıralanır. Kullanıcılar isterse sonradan değişiklik yapabilirler.
   moviesToShow.sort((a, b) => b.vote_average - a.vote_average);
 
   const location = useLocation();
   const pathPart = location.pathname.split("/");
 
   const [currentPage, setCurrentPage] = useState();
-  const totalPages = 500; // state?.trendDaily?.data.total_pages; // Toplam sayfa sayısı
+  const totalPages = 500; //Toplam sayfa sayısı
 
-  // Sayfa değiştiğinde yapılacak işlemleri burada gerçekleştirebilirsiniz.
+  // Sayfa değiştiğinde sayfanın numarasına göre paginatePath yeni bir sayfa oluşturur SiteContext içinde location değişikliği algılanır ve yeni API istekleri ilgili pageId url içinden çekilerek gerçekleştirilir.
+  //setCurrentPage yeni sayfa numarasıyla güncellenir.
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
     paginatePath(newPage);
 
     window.scrollTo(0, 520); // Sayfa yüklenirken en üstüne gitmek için
   };
-
+  //...movies/trend/page/2 eğer bir pageId yani sayfa numarası yoksa sayfa numarası 1 demektir ve pagination için bu sağlanır.
   const navigate = useNavigate();
   useEffect(() => {
     setCurrentPage(pathPart[4] ? pathPart[4] : 1);
   }, [location]);
 
   function showMoviesDaily() {
-    // Toggle'ı true olarak ayarlayın ve LocalStorage'a kaydedin
     setToggle(true);
     localStorage.setItem("toggle", "true");
+    // toggle değiştiğinde günlük trendler filmler ilk sayfadan açılır
     setCurrentPage(1);
-    navigate(""); // toggle değiştiğinde günlük trendler filmler ilk sayfadan açılır
+    navigate("");
   }
 
   function showMoviesWeekly() {
-    // Toggle'ı false olarak ayarlayın ve LocalStorage'a kaydedin
     setToggle(false);
     localStorage.setItem("toggle", "false");
+    // toggle değiştiğinde haftalık trend filmler ilk sayfadan açılır
     setCurrentPage(1);
-    navigate(""); // toggle değiştiğinde haftalık trend filmler ilk sayfadan açılır
+    navigate("");
   }
 
+  //tek sayfalık veri gösterildiği için useMemo ile optimize edilmeye uygun.
   useMemo(() => {
     if (selectedOption === "1") {
       moviesToShow.sort((a, b) => b.vote_average - a.vote_average);
@@ -127,7 +129,6 @@ function Trend() {
 
         {/* Sayfalama bileşeni */}
         <TrendPagination
-          // setSelectedOption={setSelectedOption}
           totalPages={totalPages}
           currentPage={currentPage}
           onPageChange={handlePageChange}

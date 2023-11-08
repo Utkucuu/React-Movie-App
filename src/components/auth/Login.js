@@ -4,36 +4,40 @@ import { useUser } from "../../context/AuthContext";
 import { Helmet } from "react-helmet";
 function Login() {
   const navigate = useNavigate();
-
+  //AuthContext üzerinden kullanıcı bilgileri getirilir.
   const { setUser } = useUser();
+
+  //inputlardan alınan verileri tutmak için formData state'i kullanılır
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
   const [error, setError] = useState("");
-  const inputRef = useRef();
 
+  const inputRef = useRef();
+  //handleInputChange fonksiyonu inputlar değiştikçe formDatayı günceller
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  //Giriş butonuna basıldığında handleLogin çalışır. Kullanıcı adı ve şifre kontrolü yapılır.
   const handleLogin = () => {
-    // Kullanıcı adı ve şifre geçerliyse kontrolü
     if (!formData.username) {
       setError("Kullanıcı adı boş bırakılamaz.");
     } else if (!formData.password) {
       setError("Şifre boş bırakılamaz.");
     } else {
-      // Daha önce kayıt yapılmış kullanıcıları kontrol et
+      // Kullanıcı adı ve şifre boş değilse daha önce kayıt yapılmış kullanıcıları kontrol etmek için users storage'dan getirilir.
       const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 
+      //Kullanıcının inputlara girmiş olduğu username ve password verileri formData üzerinden localStorage daki verilerle karşılaştırılır.
       const foundUser = storedUsers.find(
         (user) =>
           user.username === formData.username &&
           user.password === formData.password,
       );
-
+      //Yukarıdaki find fonksiyonundan dönecek değer true olursa aşağıda kullanıcı oturum aktive edilir, setUser güncellenir, kullanıcı Pages>Profile.js sayfasına yönlendirilir.
       if (foundUser) {
         foundUser.isLoggedIn = true;
         localStorage.setItem("activeUser", JSON.stringify(foundUser));

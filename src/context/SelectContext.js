@@ -15,3 +15,5 @@ const OptionProvider = ({ children }) => {
 };
 
 export default OptionProvider;
+
+//Sıralama işlemleri için gerekli component iletişimi bu context aracılığı ile sağlanır.

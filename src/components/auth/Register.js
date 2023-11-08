@@ -24,10 +24,10 @@ function Register() {
   };
 
   function isValidEmail(email) {
-    // E-posta adresinin geçerliliğini kontrol etmek için bir regex deseni kullanın
+    // E-posta adresinin geçerliliğini kontrol etmek için
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-    // E-posta adresini desenle karşılaştırın
+    // E-posta adresi test edilir
     return emailPattern.test(email);
   }
 
@@ -65,7 +65,7 @@ function Register() {
   const handleRegister = () => {
     let errorMessage = "";
 
-    // Kullanıcı adı ve e-posta geçerliyse kontrolü
+    // Kullanıcı form kontrolleri
     if (!formData.username) {
       errorMessage = "Kullanıcı adı boş bırakılamaz.";
     } else if (!isValidUsername(formData.username)) {
@@ -90,7 +90,7 @@ function Register() {
       // Daha önce kayıt yapılmış kullanıcıları kontrol et
       const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
 
-      // daha önce verilmiş bir userId varsa kontrol et, yoksa oluşturduğunu ver, varsa yeni oluştur
+      // Daha önce verilmiş bir userId varsa kontrol et, yoksa oluşturduğunu ver, varsa yeni oluştur
       let userId = generateUUID();
       if (storedUsers.some((user) => user.userId === userId)) {
         userId = generateUUID();
@@ -104,7 +104,7 @@ function Register() {
         inputRef.current.innerText = errorMessage;
       } else {
         // Kayıt işlemi başarılı, localStorage a gönderilebilir.
-
+        inputRef.current.style.color = "rgb(217 249 157)";
         inputRef.current.innerText = "Kayıt Başarılı. Yönlendiriliyorsunuz..";
         // Kullanıcıyı local storage'a kaydet
         storedUsers.push(formData);
@@ -231,7 +231,7 @@ function Register() {
           </button>
         </div>
         <div
-          className="mt-4 text-start text-xs font-bold text-red-600 "
+          className="mt-4 text-start text-xs font-bold text-red-500 "
           ref={inputRef}
         ></div>
       </form>

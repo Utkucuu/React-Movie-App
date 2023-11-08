@@ -1,4 +1,5 @@
 function sortGenres({ handleSelectedGenres, selectedGenres, movieGenres }) {
+  console.log(movieGenres);
   return (
     <>
       <div className="">

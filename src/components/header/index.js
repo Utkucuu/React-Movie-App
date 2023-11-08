@@ -41,14 +41,6 @@ function Header() {
     setUser(false);
   };
 
-  //   const handleLogout = () => {
-  // localStorage.setItem("sessionHandle", false);
-
-  //     setUser(false);
-
-  //   };
-
-  // bg-gradient-to-b from-cyan-400 to-sky-900
   return (
     <header>
       <div className="relative mx-auto rounded-none bg-opacity-20 bg-gradient-to-b from-cyan-400 to-sky-900 p-4  dark:from-slate-950 dark:to-sky-900 lg:rounded-b-xl">
@@ -56,7 +48,7 @@ function Header() {
           <Logo />
           <Navbar />
           <div className="ms-20 hidden w-80 justify-center text-center lg:flex">
-            {/* SearcBar lg ve üstü ekran boyutlarında header içinde görünecek daha aşağıdaki boyutlarda page lerin içinde mobile menünün hemen altında görünecek. Bu sebeple yukarıdaki classları verdim. */}
+            {/* SearcBar lg ve üstü ekran boyutlarında header içinde görünecek daha aşağıdaki boyutlarda page lerin içinde görünecek. Bu sebeple yukarıdaki classları verdim. */}
             <SearchBar />
           </div>
 
@@ -65,6 +57,7 @@ function Header() {
             <ProfileIcon />
             <div className="absolute -left-4 top-10 z-40 hidden w-20 rounded-md border-2 bg-sky-900 p-1 text-center text-xs text-sky-200 group-hover:block ">
               {" "}
+              {/* user varsa durumu için ProfileIcon hover durumu */}
               {user ? (
                 <>
                   <div className="border-b-2  pb-2 text-sm">

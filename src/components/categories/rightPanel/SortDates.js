@@ -1,4 +1,7 @@
 function SortDates({ selectedDates, handleSelectedDates, dateIntervals }) {
+  //dateIntervals içinden gelen veriler select elementinin yıllar için seçeneklerini oluşturur.
+  //selectedDates içinde seçilen yıl bulunur.
+  // handleSelectedDates onchange ile tetiklendiğinde select değeri değişir.
   return (
     <div className="">
       <select

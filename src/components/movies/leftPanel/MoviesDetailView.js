@@ -34,12 +34,10 @@ function MoviesDetailView({ movies, genres }) {
                     </li>
                     <li className="text-gray-600 dark:text-cyan-600">
                       {movie.genre_ids.slice(0, 3).map((genreId, index) => {
-                        // genreId'yi kullanarak doğru tür adını bulun
                         const genre = genres.find(
                           (genre) => genre.id === genreId,
                         );
 
-                        // Eğer tür bulunduysa, tür adını listeye ekleyin
                         if (genre) {
                           return (
                             <span key={index}>
@@ -52,7 +50,7 @@ function MoviesDetailView({ movies, genres }) {
                           );
                         }
 
-                        return <span> İçerik eklenmedi</span>; // Eğer tür bulunamazsa, boş bir eleman ekleyin ya da atlayın
+                        return <span> İçerik eklenmedi</span>;
                       })}
                     </li>
                   </ul>
@@ -108,7 +106,6 @@ function MoviesDetailView({ movies, genres }) {
                           (genre) => genre.id === genreId,
                         );
 
-                        // Eğer tür bulunduysa, tür adını listeye ekleyin
                         if (genre) {
                           return (
                             <span key={genre.id}>
@@ -121,7 +118,7 @@ function MoviesDetailView({ movies, genres }) {
                           );
                         }
 
-                        return null; // Eğer tür bulunamazsa, boş bir eleman ekleyin ya da atlayın
+                        return null;
                       })}
                     </li>
                   </ul>

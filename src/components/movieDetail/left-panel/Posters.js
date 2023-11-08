@@ -91,7 +91,6 @@ function Posters() {
             id="poster"
           >
             <div className="relative rounded-xl bg-sky-900 p-2 sm:p-8">
-              {/* <span className="bg-red-200 absolute top-0 right-0"> x</span> */}
               <span onClick={closeModal}>
                 {" "}
                 <ModalCloseICon />

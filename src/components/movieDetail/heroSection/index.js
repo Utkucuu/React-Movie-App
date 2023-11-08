@@ -50,14 +50,6 @@ function HeroSection() {
     );
   }
 
-  // if (!movieDetail) {
-  //   return (
-  //     <div className="container mx-auto justify-center items-center">
-  //       <div className="animate-spin"></div>
-  //     </div>
-  //   );
-  // }
-
   // Resim URL'sini oluşturdum
   const backgroundImageUrl = `${process.env.REACT_APP_API_IMG_ORG}${movieDetail.backdrop_path}`;
 
@@ -122,7 +114,6 @@ function HeroSection() {
                 </div>
               )}
             </div>
-            {/* ****************** TRAİLER ***************** */}
 
             {/* ****************** POSTER ***************** */}
             <figure className=" hidden w-72 flex-none lg:block">
@@ -133,7 +124,6 @@ function HeroSection() {
                 loading="lazy"
               />
             </figure>
-            {/* ****************** POSTER ***************** */}
 
             {/* ****************** MOVİE CONTENT ***************** */}
             <article className="flex-col space-y-2 ">
@@ -199,7 +189,6 @@ function HeroSection() {
                     likeBtnStyle={likeBtnStyle}
                     setLikeBtnStyle={setLikeBtnStyle}
                   />
-                  {/* ************** LİKE ITEM END ************** */}
 
                   {/* ***************** Save Icon ***************** */}
                   <SaveBtn
@@ -207,7 +196,6 @@ function HeroSection() {
                     saveBtnStyle={saveBtnStyle}
                     setSaveBtnStyle={setSaveBtnStyle}
                   />
-                  {/* ***************** Save Icon ***************** */}
 
                   {/* ***************** PLAY ICON STARS ***************** */}
                   <button
@@ -218,7 +206,6 @@ function HeroSection() {
                       <TrailerAreaClose />
                     )}
                   </button>
-                  {/* ***************** PLAY ICON END ***************** */}
                 </div>
               </div>
             </article>

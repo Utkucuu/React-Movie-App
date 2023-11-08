@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useMovie } from "../../context/SiteContext";
-
-import UpcomingPagination from "../../components/paginations/UpcomingPagination";
 import { useOption } from "../../context/SelectContext";
 import { useBestMovie } from "../../context/BestMoviesContext";
+import UpcomingPagination from "../../components/paginations/UpcomingPagination";
 import MainTitleArea from "../../components/movies/leftPanel/MainTitleArea";
 import MoviesWindowView from "../../components/movies/leftPanel/MoviesWindowView";
 import MoviesDetailView from "../../components/movies/leftPanel/MoviesDetailView";
@@ -11,17 +10,11 @@ import { Helmet } from "react-helmet";
 
 function Upcoming() {
   const state = useMovie();
-
   const { selectedOption } = useOption();
-
   const { setBestMovie } = useBestMovie();
-
   const upComingMovies = state?.upComingPage?.data?.results || [];
-
   const movieGenres = state?.movieGenres?.data?.genres || [];
-
   const [viewToggle, setViewToggle] = useState(true);
-
   useEffect(() => {
     let best = [...upComingMovies]; // Dizi referansını kopyala
 

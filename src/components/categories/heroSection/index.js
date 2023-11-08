@@ -14,7 +14,6 @@ function CategoriesHeroSection() {
   const textTure3 = [];
 
   if (trendDaily.length > 0) {
-    // 'length' yazım hatası düzeltildi
     trendDaily.slice(0, 6).forEach((e) => {
       textTure1.push(process.env.REACT_APP_API_IMG_5 + e.poster_path);
     });
@@ -45,20 +44,6 @@ function CategoriesHeroSection() {
   }
 
   return (
-    // <div className="mx-auto mt-20 h-auto rounded-none bg-sky-100 bg-opacity-50 p-2 shadow-2xl shadow-sky-700 duration-500 md:rounded-3xl">
-    //   <div className="mx-auto flex items-center justify-around rounded-2xl bg-opacity-10 bg-gradient-to-b from-cyan-400 to-sky-950 py-5">
-    //     <div className="h-72">
-    //       <CubeItem textTures={textTure1} />{" "}
-    //     </div>
-    //     <div className="h-72">
-    //       <CubeItem textTures={textTure2} />
-    //     </div>
-    //     <div className="h-72">
-    //       <CubeItem textTures={textTure3} />
-    //     </div>
-    //   </div>
-    // </div>
-
     <section className="mx-auto mt-5 h-auto overflow-hidden rounded-xl bg-gradient-to-b  from-sky-400 to-sky-900 shadow-2xl shadow-sky-700 duration-500 lg:mt-10 ">
       <div
         className="mx-auto flex h-auto touch-auto items-center justify-around rounded-xl "
@@ -71,7 +56,7 @@ function CategoriesHeroSection() {
           playing={true}
           loop={true}
           muted={true}
-          controls={false} // Kontrolleri kaldırmak istiyorsanız "false" yapın
+          controls={false}
           width={width}
           height={height}
           style={{

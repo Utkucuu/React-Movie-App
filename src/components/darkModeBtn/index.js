@@ -43,10 +43,7 @@ function DarkBtn() {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke=""
-        className="h-4 w-4 rounded-full fill-cyan-100 stroke-cyan-100 "
-        // style={{
-        //   boxShadow: "0 0 30px rgba(34, 211, 238, 0.9)",
-        // }}
+        className="h-4 w-4 rounded-full fill-cyan-100 stroke-cyan-100"
       >
         <path
           strokeLinecap="round"

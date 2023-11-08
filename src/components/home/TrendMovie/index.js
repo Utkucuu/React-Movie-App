@@ -35,14 +35,11 @@ function TrendMovie() {
 
   return (
     <section className="mx-auto mt-10 h-auto  rounded-xl bg-sky-100 bg-opacity-50 px-2 pb-2 shadow-2xl shadow-sky-700 duration-500 dark:bg-opacity-100">
-      {/* ******** ******** ******** ******** component top flex area START ******** ******** ******** ******** */}
       <div className="flex items-center justify-between ">
         <div className="ms-4 flex items-center justify-center py-[2px]">
-          {/* ********** Content Title  ********** */}
           <h2 className="whitespace-nowrap  text-sm font-bold sm:text-lg">
             Trend Filmler
           </h2>
-          {/* **************** Toggle Button - Daily / Weekly  ****************  */}
           <button
             className="relative ms-4 flex items-center justify-around space-x-2 rounded-full  px-1 py-1"
             onClick={() => setToggle(!toggle)}
@@ -60,13 +57,11 @@ function TrendMovie() {
             <span className="text-xs font-semibold sm:text-sm">Bu Hafta</span>
           </button>
         </div>
-        {/* ********* All view link *********  */}
+
         <div className="me-4 text-xs underline-offset-2 hover:underline md:text-sm">
           <Link to="movies/trend">Tümü</Link>
         </div>
       </div>
-
-      {/* ******** ******** ******** ******** component top flex area END ******** ******** ******** ******** */}
 
       <div
         className={` mx-auto flex touch-auto items-center overflow-x-auto rounded-xl bg-opacity-30 bg-gradient-to-b from-cyan-400 to-sky-950 py-5 dark:from-slate-950 dark:to-sky-900 ${styles.trendScroll}`}
@@ -79,7 +74,6 @@ function TrendMovie() {
                 className="snap-start flex-col items-center md:space-y-2"
               >
                 <div
-                  // className={`group relative mx-1 h-40 w-[133px] cursor-pointer space-y-4 overflow-hidden md:h-52 lg:h-64 lg:w-[152px] xl:w-[166px] 2xl:w-44 ${styles.movieCard}`}
                   className={`group relative mx-1  h-40 w-28 cursor-pointer sm:h-60 sm:w-40 ${styles.movieCard}`}
                   onClick={() => handleMovieClick(m.id, m.title)}
                 >

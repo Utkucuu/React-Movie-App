@@ -18,9 +18,6 @@ function SiteLayout() {
           <Header />
         </NavToggleProvider>
 
-        {/* index js yi layout sayfası olarak tasarlamak istiyorum bu sebeple outlet haline getirdim. Artık burada kullandığım tüm componentler tüm alt componentlerde görünecek. 
-      Headerın tüm componentlerde görünmesini istediğim için burada kullanarak nested haline getirdim. */}
-
         <OptionProvider>
           <BestProvider>
             <Outlet />

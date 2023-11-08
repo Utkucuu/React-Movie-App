@@ -2,7 +2,6 @@ import PrevIcon from "../../assest/icons/PrevIcon";
 import NextIcon from "../../assest/icons/NextIcon";
 
 function TrendPagination({ totalPages, currentPage, onPageChange }) {
-  console.log("PAGINATIONS TREND PAGI  rendered");
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= totalPages && newPage !== currentPage) {
       onPageChange(newPage);

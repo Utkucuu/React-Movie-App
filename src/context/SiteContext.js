@@ -9,7 +9,7 @@ const Context = createContext();
 export const useMovie = () => useContext(Context);
 
 let initialState = {
-  movies: null, // Başlangıçta null
+  movies: null,
   trendDaily: null,
   trendWeekly: null,
   movieDetail: null,
@@ -44,10 +44,8 @@ const MovieProvider = ({ children }) => {
       let upComingMovies;
       let upComingPage;
 
-      // let populerMovies;
-
-      //pathPart[1] movies e eşit değiil ise anasayfada ya da detail sayfasındayız ve detail sayfasındaysak pathPart[2] değeri bir id olacak. Bunu da detail sayfasında tıklanan film için kullanacağım.
-      //Eğer filmler sayfasındaysak pathPart[2] değeri trend, upcoming gibi bir değer almış olacak yani o path e göre tıklama yapıldığında istek atıp veri çekmiş olacağım.
+      //pathPart[1] movies'e eşit değiil ise Home, Categories ya da MovieDetail sayfasındayız ve MovieDetail sayfasındaysak pathPart[2] değeri bir id olacak. Bunu da MovieDetail sayfasında tıklanan film için kullanacağım.
+      //Eğer filmler sayfasındaysak pathPart[2] değeri trend, upcoming gibi bir değer almış olacak yani o pathname e göre tıklama yapıldığında istek atıp veri çekmiş olacağım.
       switch (pathPart[1] !== "movies" ? pathPart[1] : pathPart[2]) {
         case "":
           payload = await MovieServices.getTrendMoviesDaily();
@@ -135,7 +133,6 @@ const MovieProvider = ({ children }) => {
     };
 
     axioshData();
-    // }, [path, id, pageId]);
   }, [path, id, pageId]);
 
   const data = {
