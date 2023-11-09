@@ -13,7 +13,7 @@ export function PrivateProfile({ children }) {
 
 export function PrivateAuth({ children }) {
   const { user } = useUser();
-  console.log(user);
+
   if (user) {
     return <Navigate to="/profile" />;
   }

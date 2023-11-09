@@ -109,7 +109,7 @@ function HeroSection() {
               ) : (
                 <div className="absolute -bottom-60 grid w-full animate-pulse place-content-center rounded-xl text-center text-sm md:text-lg">
                   <p className="whitespace-nowrap rounded-xl  bg-red-500 p-2 font-medium">
-                    Fragman Bulunmuyor
+                    Fragman Eklenmedi
                   </p>
                 </div>
               )}

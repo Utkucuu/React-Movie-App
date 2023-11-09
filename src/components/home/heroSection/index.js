@@ -120,13 +120,6 @@ function HomeHeroSection() {
     return () => clearInterval(interval);
   }, [animationPaused]);
 
-  // const trailerLinks = [];
-  // heroTrailers.map((e) =>
-  //   trailerLinks.push(
-  //     process.env.REACT_APP_API_TRAILER + e.data.results[0].key,
-  //   ),
-  // );
-
   return (
     <section className="group mx-auto mt-5 rounded-xl bg-sky-100 bg-opacity-50 p-2 shadow-2xl shadow-sky-700 duration-500 dark:bg-opacity-100 lg:mt-10  ">
       <div

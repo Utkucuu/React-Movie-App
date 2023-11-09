@@ -5,55 +5,51 @@ import ProfileIcon from "../assest/icons/ProfileIcon";
 import { Helmet } from "react-helmet";
 function Profile() {
   const { user } = useUser();
-  const [userState, setUserState] = useState(null); // Başlangıçta null olarak ayarlayın
+  const [userState, setUserState] = useState(null);
 
   useEffect(() => {
     if (user) {
       const activeUser = JSON.parse(localStorage.getItem("activeUser"));
       setUserState(activeUser);
     }
-  }, [user]); // user bağımlılığını ekleyin
+  }, [user]);
 
   const handleMovieClick = useHandleMovieClick();
 
   const removeLikedMovie = (id) => {
     const activeUser = JSON.parse(localStorage.getItem("activeUser"));
-    // Kullanıcının beğenilen filmler listesini alın
+    // Kullanıcının beğenilen filmler listesi
     const likedMovies = activeUser.userLikedMovies;
 
-    // İlgili filmin endeksini bulun
+    // İlgili filmin indeksi
     const indexToRemove = likedMovies.findIndex((movie) => movie.id === id);
 
     if (indexToRemove !== -1) {
-      // Eğer film bulunduysa, listeden kaldırın
+      // Eğer film bulunduysa, listeden kaldır
       likedMovies.splice(indexToRemove, 1);
 
       // Güncellenmiş filmler listesini localStorage'e kaydedin
       activeUser.userLikedMovies = likedMovies;
       localStorage.setItem("activeUser", JSON.stringify(activeUser));
 
-      // setState kullanarak bileşenin yeniden yüklenmesini tetikleyin
+      // setState kullanarak bileşenin yeniden yüklenir
       setUserState({ ...userState, userLikedMovies: likedMovies });
     }
   };
 
   const removeSavedMovie = (id) => {
     const activeUser = JSON.parse(localStorage.getItem("activeUser"));
-    // Kullanıcının kaydedilen filmler listesini alın
+
     const likedMovies = activeUser.userSavedMovies;
 
-    // İlgili filmin endeksini bulun
     const indexToRemove = likedMovies.findIndex((movie) => movie.id === id);
 
     if (indexToRemove !== -1) {
-      // Eğer film bulunduysa, listeden kaldırın
       likedMovies.splice(indexToRemove, 1);
 
-      // Güncellenmiş filmler listesini localStorage'e kaydedin
       activeUser.userSavedMovies = likedMovies;
       localStorage.setItem("activeUser", JSON.stringify(activeUser));
 
-      // setState kullanarak bileşenin yeniden yüklenmesini tetikleyin
       setUserState({ ...userState, userSavedMovies: likedMovies });
     }
   };

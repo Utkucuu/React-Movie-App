@@ -12,17 +12,25 @@
 
 ### Özet
 
-Bu proje React, TailwindCss ve CSS kullanarak TMDB API ile geliştirdiğim bir film sitesi projesidir. Projede api istekleri **Axios** kullanılarak, sayfa geçişleri ise **React Router Dom V6** ile gerçekleştirilmiştir.
+Bu proje React, tailwindcss ve CSS kullanarak TMDB API ile geliştirdiğim bir film sitesi projesidir. Projede API istekleri **Axios** kullanılarak, sayfa geçişleri ise **React Router Dom V6** ile gerçekleştirilmiştir. Context API, useRoute, useReducer, useGeneratePath, useNavigate, PrivateRoute... gibi yapılar kullanılmış olup form kontrolleri Regex ile gerçekleştirilmiştir.
+
+Bu projede,
+
+- Filmler ile ilgili detaylara ulaşabilirsiniz.
+- Filmlerin fragmanlarını izleyebilirsiniz.
+- Oturum açarak daha sonra izlemek istediğiniz filmler için liste oluşturabilirsiniz.
+- Kategori ve yıl seçimi yapabilirsiniz.
+- Film arama işlemi yapabilirsiniz.
 
 ### Genel Şema ve İşleyiş
 
-Kurgulanan Context yapısı içinde **useLocation hook** aracılığıyla url takip edilir. İlgili pathname render olduğunda **useReducer hook** tarafından MovieServices'te kullanılmış olan "named export" yöntemi sayesinde gerekli api istekleri gerçekleştirilir ve dönen veriler data içinde ilgili alt komponente provide edilir. Alt komponentlerde alınan veriler gerekiyorsa çeşitli filtrelerden geçirilir ve filmler uygun şekilde kullanıcıya gösterilir. Farklı yöntemler denemek amacıyla, belirli koşullar gerçekleştiğinde bazı komponentlerin içinden de axios istekleri yapılmıştır.
+Kurgulanan Context yapısı içinde **useLocation hook** aracılığıyla url takip edilir. İlgili pathname render olduğunda **useReducer hook** tarafından MovieServices'te kullanılmış olan "named export" yöntemi sayesinde gerekli API istekleri gerçekleştirilir ve dönen veriler data içinde ilgili alt komponente provide edilir. Alt komponentlerde alınan veriler gerekiyorsa çeşitli filtrelerden geçirilir ve filmler uygun şekilde kullanıcıya gösterilir. Farklı yöntemler denemek amacıyla, belirli koşullar gerçekleştiğinde bazı komponentlerin içinden de axios istekleri yapılmıştır.
 
   <img src="./src/assest/image/MovieProject.jpg" width="400" style="display: inline-block;" />
 
 ### Kullanıcı işlemleri
 
-Kullanıcıların bir filmi beğenip kaydedebilmeleri için kayıt olup giriş yapmaları gerekmektedir. Oturum açılmadan **pages>_Profile.js_** sayfasına, oturum açıldıktan sonra **pages>_Authentication.js_** sayfasına ulaşılamaması için bu komponentler **privateRoute** olarak tasarlanmışlardır. Kullanıcı işlemleri ve oturum kontrolleri **LocalStorage** yardımıyla yönetilir. Kullanıcıların beğenip kaydettikleri filmleri profillerinde görüntüleyip daha sonra isterlerse profillerindeki ilgili bölümden kaldırabilmeleri mümkündür.
+Kullanıcıların bir filmi beğenip kaydedebilmeleri için kayıt olup giriş yapmaları gerekmektedir. Oturum açılmadan **pages>_Profile.js_** sayfasına, oturum açıldıktan sonra **pages>_Authentication.js_** sayfasına ulaşılamaması için bu komponentler **PrivateRoute** olarak tasarlanmışlardır. Kullanıcı işlemleri ve oturum kontrolleri **LocalStorage** yardımıyla yönetilir. Kullanıcıların beğenip kaydettikleri filmleri profillerinde görüntüleyip daha sonra isterlerse profillerindeki ilgili bölümden kaldırabilmeleri mümkündür.
 
 <img src="./src/assest/image/Profile.jpg" width="400" style="display: inline-block;" />
 
@@ -94,17 +102,25 @@ Film verilerini alt komponentlere dağıtmak için oluşturulmuştur.
 
 ### Summary
 
-This project is a movie website project that I developed with TMDB API using React, TailwindCss and CSS. In the project, api requests were made using **Axios** and page transitions were realized with **React Router Dom V6**.
+This project is a movie website project that I developed with TMDB API using React, tailwindcss and CSS. In the project, API requests were made using **Axios** and page transitions were made with **React Router Dom V6**. Context API, useRoute, useReducer, useReducer, useGeneratePath, useNavigate, PrivateRoute... are used and form controls are implemented with Regex.
+
+In this project
+
+- You can find details about the movies.
+- You can watch trailers of movies.
+- You can create a list of movies you want to watch later by logging in.
+- You can select category and year.
+- You can search for movies
 
 ### General Schema and Functionality
 
-The url is tracked through **useLocation hook** in the constructed Context structure. When the relevant pathname is rendered, the necessary api requests are made by **useReducer hook** through the "named export" method used in MovieServices and the returned data is provided to the relevant sub-component in the data. The data received in the subcomponents is passed through various filters if necessary and the movies are displayed to the user accordingly. In order to try different methods, axios requests were also made from within some components when certain conditions were met.
+The url is tracked through **useLocation hook** in the constructed Context structure. When the relevant pathname is rendered, the necessary API requests are made by **useReducer hook** through the "named export" method used in MovieServices and the returned data is provided to the relevant sub-component in the data. The data received in the subcomponents is passed through various filters if necessary and the movies are displayed to the user accordingly. In order to try different methods, axios requests were also made from within some components when certain conditions were met.
 
   <img src="./src/assest/image/MovieProject.jpg" width="400" style="display: inline-block;" />
 
 ### User operations
 
-In order for users to like and save a movie, they need to register and log in. These components are designed as **privateRoute** so that **pages>_Profile.js_** cannot be accessed without logging in and **pages>_Authentication.js_** cannot be accessed after logging in. User actions and session controls are managed with the help of **LocalStorage**. It is possible for users to view the movies they like and save in their profile and then remove them from the relevant section of their profile if they wish.
+In order for users to like and save a movie, they need to register and log in. These components are designed as **PrivateRoute** so that **pages>_Profile.js_** cannot be accessed without logging in and **pages>_Authentication.js_** cannot be accessed after logging in. User actions and session controls are managed with the help of **LocalStorage**. It is possible for users to view the movies they like and save in their profile and then remove them from the relevant section of their profile if they wish.
 
 <img src="./src/assest/image/Profile.jpg" width="400" style="display: inline-block;" />
 
