@@ -124,13 +124,13 @@ In order for users to like and save a movie, they need to register and log in. T
 
 <img src="./src/assest/image/Profile.jpg" width="400" style="display: inline-block;" />
 
-In **components>auth>_Register.js_** component, form controls are provided with **Regex**. If the registration is successful, a unique id is defined to the user with the help of the **generateUUID** function. If you continue to the next stages of the project, users can be managed through this id.
+Form controls are provided with **Regex** in the **components>auth>_Register.js_** component. If the registration is successful, a unique id is defined to the user with the help of the **generateUUID** function. If you continue to the next stages of the project, users can be managed through this id.
 
 ### Page Flows
 
-- In the <ins>**pages>movies>_Populer.js_**</ins> component, the scroll position is tracked and an API request is made to fetch the data from the next page when the end of the page is reached, but this method is not efficient because it bloats the Real DOM.
+- By tracking the scroll position in the <ins>**pages>movies>_Populer.js_**</ins> component and when the end of the page is reached, an API request is made to fetch the data on the next page, but this method is not efficient as it inflates the Real DOM.
 
-- In the <ins>**pages>_Categories.js_**</ins> component, the page flow is implemented using the **virtua** package. For this reason, scrolling down the scroll always renders the same number of elements in the Real DOM, which is more efficient for page flow.
+- Page flow is achieved using the **Virtua** package in the <ins>**pages>_Categories.js_**</ins> component. For this reason, when the scroll is scrolled down, always the same number of elements are rendered in the Real DOM, this method is more efficient for page flow.
 
 ### utils
 
@@ -152,8 +152,7 @@ User session status is monitored on this context. If activeUser is present, user
 
 - #### BestMoviesContext.js
 
-To show the most "..." movies
-Communicates **components>movies>rigthPanel>_BestMovies.js_** with other components (Popular.js, TopRated.js, Trend.js, upComing.js, Categories.js).
+"It enables communication between **components>movies>rigthPanel>_BestMovies.js_** and other components (Populer.js, TopRated.js, Trend.js, upComing.js, Categories.js) so that the most "..." movies can be displayed.
 
 <img src="./src/assest/image/BestMovies.jpg" width="200" style="display: inline-block;" />
 
