@@ -78,7 +78,7 @@ Film verilerini alt komponentlere dağıtmak için oluşturulmuştur.
 
 ### DarkMode
 
-[tailwind Dark Mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
+[tailwindcss Dark Mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
 
 ### Palet
 
@@ -102,39 +102,39 @@ Film verilerini alt komponentlere dağıtmak için oluşturulmuştur.
 
 ### Summary
 
-This project is a movie website developed using React, Tailwind CSS, and CSS, interacting with the TMDB API. API requests are made using **Axios**, and page transitions are implemented with **React Router Dom V6**. Various structures such as Context API, useRoute, useReducer, useGeneratePath, useNavigate, and PrivateRoute are utilized, and form controls are implemented with Regex.
+This project is a movie website project that I developed with TMDB API using React, tailwindcss and CSS. In the project, API requests were made using **Axios** and page transitions were made with **React Router Dom V6.** Context API, useRoute, useReducer, useReducer, useGeneratePath, useNavigate, PrivateRoute... are used and form controls are implemented with Regex.
 
-In this project, you can:
+In this project
 
-- Access details about movies.
-- Watch trailers for movies.
-- Register and log in to create a list of movies to watch later.
-- Select categories and years for movies.
-- Search for movies.
+- You can find details about the movies.
+- You can watch trailers of movies.
+- You can create a list of movies you want to watch later by logging in.
+- You can select category and year.
+- You can search for movies
 
 ### General Structure and Workflow
 
-The established Context structure tracks the URL through the **useLocation hook**. When the relevant pathname is rendered, API requests are made using the "named export" method used in MovieServices through the **useReducer hook**, and the returned data is provided to the respective sub-components within the data. If necessary, the data received in sub-components is filtered through various filters, and movies are displayed to the user accordingly. For experimentation with different methods, some components also make Axios requests under certain conditions.
+The url is tracked through **useLocation hook** in the constructed Context structure. When the relevant pathname is rendered, the necessary API requests are made by **useReducer hook** through the "named export" method used in MovieServices and the returned data is provided to the relevant sub-component in the data. The data received in the subcomponents is passed through various filters if necessary and the movies are displayed to the user accordingly. In order to try different methods, axios requests were also made from within some components when certain conditions were met.
 
   <img src="./src/assest/image/MovieProject.jpg" width="400" style="display: inline-block;" />
 
 ### User Operations
 
-Users need to register and log in to like and save a movie. To ensure that components like **pages>_Profile.js_** can only be accessed after logging in, these components are designed as **PrivateRoute**. User operations and session controls are managed using **LocalStorage**. Users can view the movies they liked and saved in their profiles and can remove them from the relevant section if they wish.
+In order for users to like and save a movie, they need to register and log in. These components are designed as **PrivateRoute** so that **pages>_Profile.js_** cannot be accessed without logging in and **pages>_Authentication.js_** cannot be accessed after logging in. User actions and session controls are managed with the help of **LocalStorage**. It is possible for users to view the movies they like and save in their profile and then remove them from the relevant section of their profile if they wish.
 
 <img src="./src/assest/image/Profile.jpg" width="400" style="display: inline-block;" />
 
-The form controls in the **components>auth>_Register.js_** component are provided with Regex. If the registration is successful, a unique ID is assigned to the user using the **generateUUID** function. In the subsequent stages of the project, user management can be carried out based on this ID.
+Form controls are provided with **Regex** in the **components>auth>_Register.js_** component. If the registration is successful, a unique id is defined to the user with the help of the **generateUUID** function. If you continue to the next stages of the project, users can be managed through this id.
 
 ### Page Flows
 
-- In the **pages>movies>_Populer.js_** component, the scroll position is tracked, and when the end of the page is reached, an API request is made for the data on the next page. However, this method is not efficient as it inflates the Real DOM.
+- By tracking the scroll position in the <ins>**pages>movies>_Populer.js_**</ins> component and when the end of the page is reached, an API request is made to fetch the data on the next page, but this method is not efficient as it inflates the Real DOM.
 
-- In the **pages>_Categories.js_** component, page flow is implemented using the **virtual** package. Therefore, when scrolling down, the same number of elements is always rendered in the Real DOM, making this method more efficient for page flow.
+- Page flow is achieved using the **Virtua** package in the <ins>**pages>_Categories.js_**</ins> component. For this reason, when the scroll is scrolled down, always the same number of elements are rendered in the Real DOM, this method is more efficient for page flow.
 
 ### Utils
 
-- <ins>**utils>_generatePage.js_**</ins> component changes the URL when using pagination in **pages>movies>_Trend.js_** and **pages>movies>_UpCmoing.js_**. According to the page structure established in the route>routes.js file, it triggers API requests for loading new pages when changes occur in the pathname tracked in **context>SiteContext.js**.
+- <ins>**utils>_generatePage.js_**</ins> component performs URL change to load new pages according to the page structure set up in **route>_routes.js_** file when pagination in **pages>movies>_Trend.js_** and **pages>movies>_UpCmoing.js_** pages are used. In **context>_SiteContext.js_**, location is tracked and API requests are made to load new pages according to the specified condition when the pathname changes.
 
 <div>
 <img src="./src/assest/image/pagi2.png" width="300" style="display: inline-block;" />
@@ -142,31 +142,31 @@ The form controls in the **components>auth>_Register.js_** component are provide
 </div>
 <br>
 
-<ins>**utils>_navigateDetail.js_**</ins> component creates a detail page based on the id and title of any movie clicked. It triggers API requests for the content of the page to be loaded by detecting changes in pathname through **context>\_SiteContext.js**.
+- <ins>**utils>_navigateDetail.js_**</ins> component creates a **pages>_MovieDetail.js_** page based on the id and title values of a movie when a movie is clicked, and again through **context>_SiteContext.js_** , the pathname change is detected and API requests are made to load the content of the page.
 
 ### Context
 
 - #### AuthContext.js
 
-User session status is monitored in this context. If there is an active user, the value **user=true** is returned to the sub-components, and UI changes are made.
+User session status is monitored on this context. If activeUser is present, **user=true** value is returned to subcomponents and UI changes are made.
 
 - #### BestMoviesContext.js
 
-To display the best movies, it facilitates communication between **components>movies>rigthPanel>_BestMovies.js_** and other components (Populer.js, TopRated.js, Trend.js, upComing.js, Categories.js).
+It enables communication between **components>movies>rigthPanel>_BestMovies.js_** and other components (Populer.js, TopRated.js, Trend.js, upComing.js, Categories.js) so that the most "..." movies can be displayed.
 
 <img src="./src/assest/image/BestMovies.jpg" width="200" style="display: inline-block;" />
 
 - #### SelectContext.js
 
-For sorting operations, it facilitates communication between **components>movies>rigthPanel>_SortingTool.js_** and other components (Populer.js, TopRated.js, Trend.js, upComing.js, Categories.js).
+For sorting operations to be performed It provides communication between **components>movies>rigthPanel>_SortingTool.js_** and other components (Populer.js, TopRated.js, Trend.js, upComing.js, Categories.js).
 
 - #### SiteContext.js
 
-It is created to distribute movie data to sub-components.
+Created to distribute movie data to subcomponents.
 
 ### Dark Mode
 
-[Toggle Dark Mode Manually](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
+[tailwindcss Dark Mode](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually)
 
 ### Palette
 
@@ -180,11 +180,11 @@ It is created to distribute movie data to sub-components.
 
 #### Additional Information
 
-- ESLint warnings may be present in the project.
-- There is a manipulation in **App.css** within the **Categories.js** component.
-- Some components are made responsive with the "zoom" attribute in CSS.
-- **components>movieDetail>right-panel>LineChart.js** component is representative.
-- Explanatory comments are included within code blocks.
+- Eslint warnings can be seen in the project.
+- An error in **Categories.js** coponent has been manipulated in **App.css** .
+- Some components have been made responsive compatible with the css "zoom" attribute.
+- **components>movieDetail>right-panel>_LineChart.js_** component is representative.
+- Explanatory comment lines were included in the code blocks.
 
 <hr>
 
